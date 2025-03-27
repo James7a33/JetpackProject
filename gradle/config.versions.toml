@@ -37,6 +37,7 @@ floating = "1.6"
 
 #屏幕适配
 autoSize = "1.2.1"
+androidAutoSize = "v1.2.1"
 
 #图片
 roundImg = "2.3.0"
@@ -125,7 +126,7 @@ rxlifecycle2 = "2.2.2"
 # 网络库
 okhttp3 = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp3" }
 rxhttp = { group = "com.github.liujingxing.rxhttp", name = "rxhttp", version.ref = "rxHttp" }
-rxhttp-compiler = { group = "com.github.liujingxing.rxhttp", name = "rxhttp-compiler", version.ref = "rxHttp" }
+rxhttpCompiler = { group = "com.github.liujingxing.rxhttp", name = "rxhttp-compiler", version.ref = "rxHttp" }
 
 #liveData
 unpeekLiveData = { group = "com.kunminx.arch", name = "unpeek-livedata", version.ref = "unpeekLiveData" }
@@ -137,6 +138,7 @@ anchors = { group = "com.github.DSAppTeam", name = "Anchors", version.ref = "anc
 
 #屏幕适配
 autosize = { group = "me.jessyan", name = "autosize", version.ref = "autoSize" }
+androidAutoSize = {group = "com.github.JessYanCoding", name = "AndroidAutoSize", version.ref = "androidAutoSize" }
 
 #页面状态管理
 loadsir = { group = "com.kingja.loadsir", name = "loadsir", version.ref = "loadsir" }
@@ -171,7 +173,7 @@ dialogX = { group = "com.github.kongzue.DialogX", name = "DialogX", version.ref 
 
 #沉浸式
 immersionbar = { group = "com.geyifeng.immersionbar", name = "immersionbar", version.ref = "immersionbar" }
-immersionbar-ktx = { group = "com.geyifeng.immersionbar", name = "immersionbar-ktx", version.ref = "immersionbar" }
+immersionbarKtx = { group = "com.geyifeng.immersionbar", name = "immersionbar-ktx", version.ref = "immersionbar" }
 
 #Tablayout
 flycoTabLayout = { group = "io.github.h07000223", name = "flycoTabLayout", version.ref = "flycoTabLayout" }

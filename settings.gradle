@@ -26,3 +26,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "JamesMvvm"
 include ':app'
+//include':frame:f_network'
+include':frame:f_framework'
+//include':frame:f_common'
+//include':frame:f_res'

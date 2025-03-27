@@ -1,0 +1,43 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+
+apply from: '../../common.gradle'
+
+android {
+    namespace 'com.frame.framework'
+
+    libraryVariants.configureEach { variant ->
+        variant.outputs.configureEach {
+            outputFileName = "${variant.name}-${project.version}.aar"
+        }
+    }
+}
+
+dependencies {
+    api libs.activity.ktx
+    api libs.fragment.ktx
+
+    //lifecycle
+    api libs.lifecycle.livedata
+    api libs.lifecycle.viewmodel
+
+    //屏幕适配
+    api config.androidAutoSize
+
+    //页面状态管理
+    api config.loadsir
+    //沉浸式
+    api config.immersionbar
+    api config.immersionbarKtx
+
+    //对话框
+    api config.xpopup
+    //防数据倒灌的LiveData
+    api config.unpeekLiveData
+
+    //工具类
+    api config.utilcode
+}
