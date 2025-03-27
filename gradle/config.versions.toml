@@ -4,86 +4,260 @@ okhttp3 = "4.12.0"
 rxHttp = "3.3.2"
 
 #liveData
-unpeek-livedata = "7.8.0"
-liveevent-bus = "1.8.14"
+unpeekLiveData = "7.8.0"
+liveeventBus = "1.8.14"
+eventbus = "3.3.1"
 
 #异步加载
 anchors = "v1.1.8"
 
+#沉浸式
 immersionbar = "3.2.2"
 
-# 图片处理
-glide = "4.16.0"
-pictureselector = "v3.11.2"
+#adapter
+adapter = "4.1.4"
+multiAdapter = "4.3.0"
 
-# UI 组件
-quickAdapter = "4.1.4"
+#Banner
+banner = "3.5.12"
+banner2 = "2.2.3"
 
-refresh = "2.1.0"
-xpopup = "2.9.19"
-titleBar = "10.5"
-lottie = "5.0.3"
-floatingview = "1.6"
-mmkv = "1.3.4"
+#tablaout
+flycoTabLayout = "3.0.0"
+
+#视频播放器
+gsyVideoPlayer = "v8.4.0-release-jitpack"
+
+# 弹窗
+xpopup = "2.10.0"
+dialogx = "0.0.49"
+
+#悬浮窗
+floating = "1.6"
+
+#屏幕适配
+autoSize = "1.2.1"
+
+#图片
+roundImg = "2.3.0"
+circleImg = "3.1.0"
+
+#阴影
+shadowLayout = '3.4.1'
+shadowShape = '1.7.6'
+
+#webView
+agentWeb = "v5.1.1-androidx"
+agentWebDownloader = "v5.0.4-androidx"
+jsbridge = "2.0.0"
 
 # 工具类
 utilcodex = "1.31.1"
+
+#日志
 timber = "5.0.1"
+klog = "1.6.0"
+
+# 图片处理
+glide = "4.16.0"
+picture = "v3.11.2"
+
+#crash 拦截
+carsh = "2.4.0"
+
+#动画播放
+lottie = "5.0.3"
+
+#选择器
+picker = "4.1.13"
+timePicker = "0.6.3"
+
+#pdfView
+pdfView = "3.2.0-beta.1"
+
+#内置更新 Apk
+xUpdate = "2.1.4"
+updateApp = "1.2.3"
+updateAppUtils = "2.3.0"
+
+#权限请求
+xxPermissions = "20.0"
+
+#二维码
+qrCodeBar = "1.3.6"
+qrCodeZxing = "2.2.9"
+
+#本地数据保存
+mmkv = "1.3.4"
+
+#崩溃统计
+bugly = "4.1.9.3"
+
+#路由
+arouter = "1.5.2"
+
+#页面状态管理器
+loadsir = "1.3.8"
+
+#蓝牙
+fastBle = "2.4.0"
+
+#查看媒体全屏
+bigMedia = "androidx-8.0.2"
+
+#标题栏
+titleBar = "10.5"
+
+#下拉刷新，上拉加载
+refresh = "2.1.0"
+
+
 
 # 其他第三方
 rxlifecycle2 = "2.2.2"
-eventbus = "3.3.1"
-arouter = "1.5.2"
-gsyVideoPlayer = "v8.4.0-release-jitpack"
-xupdate = "2.1.4"
-xxPermissions = "20.0"
+
+
+
 
 [libraries]
+
+########################################################## 工具 ################################################################
 # 网络库
 okhttp3 = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp3" }
-
 rxhttp = { group = "com.github.liujingxing.rxhttp", name = "rxhttp", version.ref = "rxHttp" }
 rxhttp-compiler = { group = "com.github.liujingxing.rxhttp", name = "rxhttp-compiler", version.ref = "rxHttp" }
 
-
 #liveData
-unpeek-livedata = { group = "com.kunminx.arch", name = "unpeek-livedata", version.ref = "unpeek-livedata" }
-liveevent-bus = { group = "com.github.michaellee123", name = "LiveEventBus", version.ref = "liveevent-bus" }
+unpeekLiveData = { group = "com.kunminx.arch", name = "unpeek-livedata", version.ref = "unpeekLiveData" }
+liveeventBus = { group = "com.github.michaellee123", name = "LiveEventBus", version.ref = "liveeventBus" }
+eventbus = { group = "org.greenrobot", name = "eventbus", version.ref = "eventbus" }
 
 #异步初始化
 anchors = { group = "com.github.DSAppTeam", name = "Anchors", version.ref = "anchors" }
+
+#屏幕适配
+autosize = { group = "me.jessyan", name = "autosize", version.ref = "autoSize" }
+
+#页面状态管理
+loadsir = { group = "com.kingja.loadsir", name = "loadsir", version.ref = "loadsir" }
+
+#工具类
+utilcode = { group = "com.blankj", name = "utilcodex", version.ref = "utilcodex" }
+
+#权限请求
+xxPermissions = { group = "com.github.getActivity", name = "XXPermissions", version.ref = "xxPermissions" }
+
+#本地数据保存
+mmkv = { group = "com.tencent", name = "mmkv", version.ref = "mmkv" }
+
+
+#下拉刷新，上拉加载
+refresh = { group = "io.github.scwang90", name = "refresh-layout-kernel", version.ref = "refresh" } #核心必须依赖
+refreshHeaderClassics = { group = "io.github.scwang90", name = "refresh-header-classics", version.ref = "refresh" } #经典刷新头
+refreshHeaderRadar = { group = "io.github.scwang90", name = "refresh-header-radar", version.ref = "refresh" } #雷达刷新头
+refreshHeaderFalsify = { group = "io.github.scwang90", name = "refresh-header-falsify", version.ref = "refresh" } #虚拟刷新头
+refreshHeaderMaterial = { group = "io.github.scwang90", name = "refresh-header-material", version.ref = "refresh" } #谷歌刷新头
+refreshHeaderTwoLevel = { group = "io.github.scwang90", name = "refresh-header-two-level", version.ref = "refresh" } #二级刷新
+refreshFooterBall = { group = "io.github.scwang90", name = "refresh-footer-ball", version.ref = "refresh" } #球脉冲加载
+refreshFooterClassics = { group = "io.github.scwang90", name = "refresh-footer-classics", version.ref = "refresh" } #经典加载
+
+#Adapter
+adapter = { group = "io.github.cymchad", name = "BaseRecyclerViewAdapterHelper4", version.ref = "adapter" }
+multiAdapter = { group = "me.drakeet.multitype", name = "multitype", version.ref = "multiAdapter" }
+
+#弹窗
+xpopup = { group = "com.github.li-xiaojun", name = "XPopup", version.ref = "xpopup" }
+dialogX = { group = "com.github.kongzue.DialogX", name = "DialogX", version.ref = "dialogx" }
 
 #沉浸式
 immersionbar = { group = "com.geyifeng.immersionbar", name = "immersionbar", version.ref = "immersionbar" }
 immersionbar-ktx = { group = "com.geyifeng.immersionbar", name = "immersionbar-ktx", version.ref = "immersionbar" }
 
+#Tablayout
+flycoTabLayout = { group = "io.github.h07000223", name = "flycoTabLayout", version.ref = "flycoTabLayout" }
 
-# 图片加载
+#日志
+timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }
+klog = { group = "com.github.zhaokaiqiang.klog", name = "library", version.ref = "klog" }
+
+#图片加载
 glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
-glide-compiler = { group = "com.github.bumptech.glide", name = "compiler", version.ref = "glide" }
-pictureselector = { group = "io.github.lucksiege", name = "pictureselector", version.ref = "pictureselector" }
+glideCompiler = { group = "com.github.bumptech.glide", name = "compiler", version.ref = "glide" }
 
-# UI 组件
-baseAdapter = { group = "io.github.cymchad", name = "BaseRecyclerViewAdapterHelper4", version.ref = "quickAdapter" }
-refresh-layout-kernel = { group = "io.github.scwang90", name = "refresh-layout-kernel", version.ref = "refresh" }
-refresh-header-classics = { group = "io.github.scwang90", name = "refresh-header-classics", version.ref = "refresh" }
-xpopup = { group = "com.github.li-xiaojun", name = "XPopup", version.ref = "xpopup" }
-titlebar = { group = "com.github.getActivity", name = "TitleBar", version.ref = "titleBar" }
+#WebView
+agentWeb = { group = "io.github.justson", name = "agentweb-core", version.ref = "agentWeb" }
+agentWebFilechooser = { group = "io.github.justson", name = "agentweb-filechooser", version.ref = "agentWeb" }
+agentWebDownloader = { group = "io.github.justson", name = "Downloader", version.ref = "agentWebDownloader" }
+jsbridge = { group = "com.github.lzyzsd", name = "jsbridge", version.ref = "jsbridge" }
+
+#崩溃拦截
+crash = { group = "cat.ereza", name = "customactivityoncrash", version.ref = "carsh" }
+
+#动画播放
 lottie = { group = "com.airbnb.android", name = "lottie", version.ref = "lottie" }
 
-# 工具类
-utilcodex = { group = "com.blankj", name = "utilcodex", version.ref = "utilcodex" }
-timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }
-mmkv = { group = "com.tencent", name = "mmkv", version.ref = "mmkv" }
-
-
-
-# 其他第三方
-rxlifecycle2 = { group = "com.trello.rxlifecycle2", name = "rxlifecycle-android", version.ref = "rxlifecycle2" }
-eventbus = { group = "org.greenrobot", name = "eventbus", version.ref = "eventbus" }
-arouter-api = { group = "com.alibaba", name = "arouter-api", version.ref = "arouter" }
-arouter-compiler = { group = "com.alibaba", name = "arouter-compiler", version.ref = "arouter" }
+#Video播放器
 gsyVideoPlayer = { group = "com.github.CarGuo.GSYVideoPlayer", name = "GSYVideoPlayer", version.ref = "gsyVideoPlayer" }
-xupdate = { group = "com.github.xuexiangjys", name = "XUpdate", version.ref = "xupdate" }
-xxPermissions = { group = "com.github.getActivity", name = "XXPermissions", version.ref = "xxPermissions" }
+
+#选择器
+pickerCommon = { group = "com.github.gzu-liyujiang.AndroidPicker", name = "Common", version.ref = "picker" }
+pickerWheel = { group = "com.github.gzu-liyujiang.AndroidPicker", name = "WheelPicker", version.ref = "picker" }
+pickerAddress = { group = "com.github.gzu-liyujiang.AndroidPicker", name = "AddressPicker", version.ref = "picker" }
+pickerCalendar = { group = "com.github.gzu-liyujiang.AndroidPicker", name = "CalendarPicker", version.ref = "picker" }
+timePicker = { group = "com.github.loper7", name = "DateTimePicker", version.ref = "timePicker" }
+
+#图片选择器
+picture = { group = "io.github.lucksiege", name = "pictureselector", version.ref = "picture" }
+pictureCompress = { group = "io.github.lucksiege", name = "compress", version.ref = "picture" }
+pictureUcrop = { group = "io.github.lucksiege", name = "ucrop", version.ref = "picture" }
+pictureCamerax = { group = "io.github.lucksiege", name = "camerax", version.ref = "picture" }
+
+#内置更新 Apk
+xUpdate = { group = "com.github.xuexiangjys", name = "XUpdate", version.ref = "xUpdate" }
+updateApp = { group = "com.qianwen", name = "update-app-kotlin", version.ref = "updateApp" }
+updateAppUtils = { group = "com.teprinciple", name = "updateapputilsx", version.ref = "updateAppUtils" }
+
+
+########################################################## UI ################################################################
+
+#Banner
+banner = { group = "com.github.zhpanvip", name = "bannerviewpager", version.ref = "banner" }
+banner2 = { group = "io.github.youth5201314", name = "banner", version.ref = "banner2" }
+
+#悬浮窗
+floatingView = { group = "com.imuxuan", name = "floatingview", version.ref = "floating" }
+
+#图片
+roundImg = { group = "com.makeramen", name = "roundedimageview", version.ref = "roundImg" }
+circleImg = { group = "de.hdodenhof", name = "circleimageview", version.ref = "circleImg" }
+
+#阴影
+shadowLayout = { group = "com.github.lihangleo2", name = "ShadowLayout", version.ref = "shadowLayout" }
+shadowShape = { group = "com.github.JavaNoober.BackgroundLibrary", name = "libraryx", version.ref = "shadowShape" }
+
+#PDF
+pdfView = { group = "com.github.mhiew", name = "android-pdf-viewer", version.ref = "pdfView" }
+
+#二维码
+qrCodeBar = { group = "cn.bingoogolapple", name = "bga-qrcode-zbar", version.ref = "qrCodeBar" }
+qrCodeZxing = { group = "com.github.yuzhiqiang1993", name = "zxing", version.ref = "qrCodeZxing" }
+
+#标题栏
+titlebar = { group = "com.github.getActivity", name = "TitleBar", version.ref = "titleBar" }
+
+#蓝牙
+fastBle = { group = "com.github.Jasonchenlijian", name = "FastBle", version.ref = "fastBle" }
+
+#查看媒体全屏
+bigMedia = { group = "com.github.SherlockGougou", name = "BigImageViewPager", version.ref = "bigMedia" }
+
+#崩溃统计
+bugly = { group = "com.tencent.bugly", name = "crashreport", version.ref = "bugly" }
+
+#路由
+arouter = { group = "com.alibaba", name = "arouter-api", version.ref = "arouter" }
+arouterCompiler = { group = "com.alibaba", name = "arouter-compiler", version.ref = "arouter" }
+
+
+
 
