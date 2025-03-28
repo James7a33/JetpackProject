@@ -1,12 +1,16 @@
 [versions]
 agp = "8.7.0"
 kotlin = "1.9.24"
+ksp = "2.0.21"
+
 coreKtx = "1.13.1"
-junit = "4.13.2"
-junitVersion = "1.2.1"
-espressoCore = "3.6.1"
 appcompat = "1.6.1"
 material = "1.10.0"
+multidex="2.0.1"
+junit = "4.13.2"
+androidxJunit = "1.2.1"
+junitKtx="1.2.1"
+espressoCore = "3.6.1"
 
 activityKtx = "1.8.0"
 fragmentKtx = "1.6.1"
@@ -16,12 +20,7 @@ lifecycle = "2.6.2"
 navigation = "2.6.0"
 
 #协程
-coroutines = "1.7.1"
-
-
-#View
-recycler = "1.4.0"
-constraint = "2.1.4"
+coroutines = "1.7.3"
 
 # 数据库
 room = "2.5.1"
@@ -29,15 +28,28 @@ room = "2.5.1"
 #注入
 hilt = "2.44"
 
+#Gson
+gson = "2.10.1"
+
+#View
+recycler = "1.4.0"
+constraint = "2.1.4"
+
+
 
 # Android 官方库
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
-junit = { group = "junit", name = "junit", version.ref = "junit" }
-androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
-androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+multidex = {group = "androidx.multidex", name = "multidex" , version.ref = "multidex"}
+
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidxJunit" }
+junit-ktx = {group = "androidx.test.ext", name = "junit-ktx" , version.ref = "junitKtx"}
+
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+
 
 activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "activityKtx" }
 fragment-ktx = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragmentKtx" }
@@ -66,13 +78,18 @@ room-compiler = { group = "androidx.room", name = "room-compiler", version.ref =
 hilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hiltCompiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
 
+#Gson
+gson = {group = "com.google.code.gson", name = "gson", version.ref = "gson"}
+
 #View
 recyclerView = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recycler" }
 constraintLayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraint" }
 
 
-
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
+kotlin-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 

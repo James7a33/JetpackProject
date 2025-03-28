@@ -1,0 +1,18 @@
+plugins {
+    alias(libs.plugins.android.library)
+}
+
+apply from: '../../common.gradle'
+
+android {
+    namespace 'com.tools.permission'
+}
+
+dependencies {
+    implementation project(':tools:t_logger')
+    implementation project(':tools:t_toast')
+
+    implementation libs.androidx.core.ktx
+    implementation config.xxPermissions
+    implementation config.xpopup
+}

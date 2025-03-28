@@ -1,0 +1,31 @@
+plugins {
+    alias(libs.plugins.android.library)
+}
+
+apply from: '../../common.gradle'
+
+android {
+    namespace 'com.frame.f_base'
+}
+
+dependencies {
+    api libs.androidx.core.ktx
+    api libs.androidx.appcompat
+    api libs.material
+    api libs.multidex
+    api libs.junit.ktx
+
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.junit
+    androidTestImplementation libs.androidx.espresso.core
+
+    api libs.activity.ktx
+    api libs.fragment.ktx
+
+    //lifecycle
+    api libs.lifecycle.livedata
+    api libs.lifecycle.viewmodel
+
+    //页面状态管理
+    api config.loadsir
+}

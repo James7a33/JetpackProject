@@ -1,0 +1,17 @@
+plugins {
+    alias(libs.plugins.android.library)
+}
+
+apply from: '../../common.gradle'
+
+android {
+    namespace 'com.frame.network'
+}
+
+dependencies {
+    implementation config.okhttp3
+    implementation config.rxhttp
+    kapt config.rxhttpCompiler
+
+    implementation config.liveEventBus
+}

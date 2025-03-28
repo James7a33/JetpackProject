@@ -1,5 +1,11 @@
 pluginManagement {
     repositories {
+        maven { setUrl("https://maven.aliyun.com/repository/central") }
+        maven { setUrl("https://maven.aliyun.com/repository/jcenter") }
+        maven { setUrl("https://maven.aliyun.com/repository/google") }
+        maven { setUrl("https://maven.aliyun.com/repository/gradle-plugin") }
+        maven { setUrl("https://maven.aliyun.com/repository/public") }
+        maven { setUrl("https://jitpack.io") }
         google {
             content {
                 includeGroupByRegex("com\\.android.*")
@@ -7,6 +13,7 @@ pluginManagement {
                 includeGroupByRegex("androidx.*")
             }
         }
+        jcenter()
         mavenCentral()
         gradlePluginPortal()
     }
@@ -14,9 +21,22 @@ pluginManagement {
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
+        maven { setUrl("https://maven.aliyun.com/repository/central") }
+        maven { setUrl("https://maven.aliyun.com/repository/jcenter") }
+        maven { setUrl("https://maven.aliyun.com/repository/google") }
+        maven { setUrl("https://maven.aliyun.com/repository/gradle-plugin") }
+        maven { setUrl("https://maven.aliyun.com/repository/public") }
+        maven { setUrl("https://jitpack.io") }
+        jcenter()
         google()
         mavenCentral()
+
+        //jar aar 依赖 统一处理
+//        flatDir {
+//            dirs "$rootDir/business/b_login/libs"
+//        }
     }
+
     versionCatalogs {
         config {
             from files('gradle/config.versions.toml')
@@ -27,6 +47,26 @@ dependencyResolutionManagement {
 rootProject.name = "JamesMvvm"
 include ':app'
 //include':frame:f_network'
-include':frame:f_framework'
+//include':frame:f_framework'
 //include':frame:f_common'
 //include':frame:f_res'
+include ':frame:f_base'
+include ':frame:f_net'
+
+
+//数据库
+include ':tools:t_db'
+//浏览器
+include ':tools:t_web'
+//蓝牙
+include ':tools:t_blue'
+//加载图片
+include ':tools:t_glide'
+//图片选择器
+include ':tools:t_picture'
+//logger日志
+include ':tools:t_logger'
+//提示
+include ':tools:t_toast'
+//权限
+include ':tools:t_permission'

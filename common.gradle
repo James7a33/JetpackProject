@@ -1,5 +1,7 @@
-def extA = rootProject.ext.android
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
+// 读取 keystore.properties 文件
 def keystorePropertiesFile = rootProject.file("keystore.properties")
 if (!keystorePropertiesFile.exists()) {
     throw new FileNotFoundException("Keystore properties file not found at path: ${keystorePropertiesFile.absolutePath}")
@@ -8,21 +10,35 @@ def keystoreProperties = new Properties()
 keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 
 
+version = rootProject.ext.android
+
 android {
-    compileSdkVersion extA.compileSdk
+    compileSdkVersion version.compileSdk
 
     defaultConfig {
-        minSdkVersion extA.minSdk
-        targetSdkVersion extA.targetSdk
-        versionCode extA.versionCode
-        versionName extA.versionName
+        minSdkVersion version.minSdk
+        targetSdkVersion version.targetSdk
+        versionCode version.versionCode
+        versionName version.versionName
 
         ndk {
             abiFilters "arm64-v8a", "x86_64"
         }
 
+        defaultConfig {
+            kapt {
+                arguments {
+                    arg("AROUTER_MODULE_NAME", project.getName())
+                }
+            }
+        }
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildFeatures {
+        buildConfig = true
     }
 
     signingConfigs {
@@ -81,6 +97,15 @@ android {
         }
     }
 
+    // 代码警告配置
+    lintOptions {
+        // 禁用文本硬编码警告
+        disable 'HardcodedText'
+        // 禁用图片描述警告
+        disable 'ContentDescription'
+    }
+
+    //Kotlin编译器的扩展检查
     kotlinOptions {
         freeCompilerArgs += ["-Xextended-compiler-checks"]
     }
@@ -108,6 +133,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    kapt config.arouterCompiler
 }
 
 
