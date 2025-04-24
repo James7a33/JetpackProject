@@ -1,19 +1,10 @@
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-kapt'
-
-// 读取 keystore.properties 文件
-def keystorePropertiesFile = rootProject.file("keystore.properties")
-if (!keystorePropertiesFile.exists()) {
-    throw new FileNotFoundException("Keystore properties file not found at path: ${keystorePropertiesFile.absolutePath}")
-}
-def keystoreProperties = new Properties()
-keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
-
+apply plugin: 'com.google.devtools.ksp'
 
 version = rootProject.ext.android
 
 android {
-    compileSdkVersion version.compileSdk
+    compileSdk version.compileSdk
 
     defaultConfig {
         minSdkVersion version.minSdk
@@ -25,14 +16,6 @@ android {
             abiFilters "arm64-v8a", "x86_64"
         }
 
-        defaultConfig {
-            kapt {
-                arguments {
-                    arg("AROUTER_MODULE_NAME", project.getName())
-                }
-            }
-        }
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
@@ -41,29 +24,12 @@ android {
         buildConfig = true
     }
 
-    signingConfigs {
-        release {
-            keyAlias keystoreProperties['releaseKeyAlias']
-            keyPassword keystoreProperties['releaseStorePassword']
-            storeFile file(keystoreProperties['releaseStoreFile'])
-            storePassword keystoreProperties['releaseStorePassword']
-        }
-
-        debug {
-            keyAlias keystoreProperties['debugKeyAlias']
-            keyPassword keystoreProperties['debugKeyPassword']
-            storeFile file(keystoreProperties['debugStoreFile'])
-            storePassword keystoreProperties['debugStorePassword']
-        }
-    }
-
     buildTypes {
         release {
             buildConfigField "String", "BASE_URL", "\"http://192.168.110.160:8001/\""
             buildConfigField "String", "RICH_AUTH_APPID", "\"1400921875\""
             buildConfigField "String", "IM_CHAT_APP_ID", "\"1600066158\""
 
-            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
 
@@ -72,27 +38,6 @@ android {
             buildConfigField "String", "RICH_AUTH_APPID", "\"1400921875\""
             buildConfigField "String", "IM_CHAT_APP_ID", "\"1600066158\""
 
-            signingConfig signingConfigs.debug
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-
-        //孟醒本地测试服
-        xDebug {
-            buildConfigField "String", "BASE_URL", "\"http://192.168.110.160:8001/\""
-            buildConfigField "String", "RICH_AUTH_APPID", "\"1400921875\""
-            buildConfigField "String", "IM_CHAT_APP_ID", "\"1600066158\""
-
-            signingConfig signingConfigs.debug
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-
-        //陈栋本地测试服
-        dDebug {
-            buildConfigField "String", "BASE_URL", "\"http://192.168.110.160:8001/\""
-            buildConfigField "String", "RICH_AUTH_APPID", "\"1400921875\""
-            buildConfigField "String", "IM_CHAT_APP_ID", "\"1600066158\""
-
-            signingConfig signingConfigs.debug
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -133,7 +78,6 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    kapt config.arouterCompiler
 }
 
 

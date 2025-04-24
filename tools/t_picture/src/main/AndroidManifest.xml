@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-sdk tools:overrideLibrary="androidx.camera.view,
+    androidx.camera:camera-camera2,
+    androidx.camera.camera2,androidx.camera.lifecycle,
+    androidx.camera.core" />
+
+    <!--适配Android R包可见性 开始-->
+    <queries package="${applicationId}">
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent>
+        <intent>
+            <action android:name="android.media.action.ACTION_VIDEO_CAPTURE" />
+        </intent>
+    </queries>
+    <!--适配Android R包可见性 结束-->
 </manifest>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/ivSplash"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@mipmap/ic_activity_bg"
+        android:visibility="visible"
+        tools:visibility="visible" />
+
+    <com.noober.background.view.BLTextView
+        android:id="@+id/tv_skip"
+        style="@style/tv_color_2_14"
+        android:layout_width="@dimen/dp_75"
+        android:layout_height="@dimen/dp_35"
+        android:layout_marginTop="@dimen/dp_50"
+        android:layout_marginEnd="@dimen/dp_30"
+        android:gravity="center"
+        android:text="@string/splash_skip"
+        android:visibility="visible"
+        app:bl_corners_radius="@dimen/dp_25"
+        app:bl_solid_color="@color/white_60"
+        app:bl_stroke_color="@color/white_20"
+        app:bl_stroke_width="@dimen/dp_0_5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/icSplashLauncher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_110"
+        android:src="@mipmap/ic_splash_icon"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivSplashMusic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:src="@mipmap/ic_splash_music"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/icSplashLauncher" />
+
+
+    <ImageView
+        android:id="@+id/icSplashLauncherBtm"
+        android:layout_width="@dimen/dp_36"
+        android:layout_height="@dimen/dp_36"
+        android:src="@mipmap/ic_splash_icon"
+        android:layout_marginBottom="@dimen/dp_10"
+        app:layout_constraintBottom_toTopOf="@+id/tvSplashTips"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/ivSplashMusicBtm" />
+
+    <ImageView
+        android:id="@+id/ivSplashMusicBtm"
+        android:layout_width="@dimen/dp_50"
+        android:layout_height="@dimen/dp_29"
+        android:layout_marginStart="@dimen/dp_10"
+        android:src="@mipmap/ic_splash_music"
+        app:layout_constraintBottom_toBottomOf="@+id/icSplashLauncherBtm"
+        app:layout_constraintLeft_toRightOf="@+id/icSplashLauncherBtm"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/icSplashLauncherBtm" />
+
+    <TextView
+        android:id="@+id/tvSplashTips"
+        style="@style/tv_color_1_14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_30"
+        android:text="@string/splash_tip"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

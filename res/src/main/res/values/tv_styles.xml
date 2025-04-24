@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--主色调-->
+    <style name="tv_color_1_10">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_10</item>
+        <item name="android:textColor">@color/tv_color_1</item>
+    </style>
+
+    <style name="tv_color_1_11">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_11</item>
+        <item name="android:textColor">@color/tv_color_1</item>
+    </style>
+
+    <style name="tv_color_1_12">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_12</item>
+        <item name="android:textColor">@color/tv_color_1</item>
+    </style>
+
+    <style name="tv_color_1_13">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_13</item>
+        <item name="android:textColor">@color/tv_color_1</item>
+    </style>
+
+    <style name="tv_color_1_14">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_14</item>
+        <item name="android:textColor">@color/tv_color_1</item>
+    </style>
+
+    <style name="tv_color_1_15">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_15</item>
+        <item name="android:textColor">@color/tv_color_1</item>
+    </style>
+
+    <style name="tv_color_1_16">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:textColor">@color/tv_color_1</item>
+    </style>
+
+    <style name="tv_color_1_17">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_17</item>
+        <item name="android:textColor">@color/tv_color_1</item>
+    </style>
+
+    <style name="tv_color_1_18">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_18</item>
+        <item name="android:textColor">@color/tv_color_1</item>
+    </style>
+
+    <style name="tv_color_1_19">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_19</item>
+        <item name="android:textColor">@color/tv_color_1</item>
+    </style>
+
+    <style name="tv_color_1_20">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_20</item>
+        <item name="android:textColor">@color/tv_color_1</item>
+    </style>
+
+
+    <!--次要的-->
+    <style name="tv_color_2_10">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_10</item>
+        <item name="android:textColor">@color/tv_color_2</item>
+    </style>
+
+    <style name="tv_color_2_11">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_11</item>
+        <item name="android:textColor">@color/tv_color_2</item>
+    </style>
+
+    <style name="tv_color_2_12">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_12</item>
+        <item name="android:textColor">@color/tv_color_2</item>
+    </style>
+
+    <style name="tv_color_2_13">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_13</item>
+        <item name="android:textColor">@color/tv_color_2</item>
+    </style>
+
+    <style name="tv_color_2_14">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_14</item>
+        <item name="android:textColor">@color/tv_color_2</item>
+    </style>
+
+    <style name="tv_color_2_15">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_15</item>
+        <item name="android:textColor">@color/tv_color_2</item>
+    </style>
+
+    <style name="tv_color_2_16">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:textColor">@color/tv_color_2</item>
+    </style>
+
+    <style name="tv_color_2_17">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_17</item>
+        <item name="android:textColor">@color/tv_color_2</item>
+    </style>
+
+    <style name="tv_color_2_18">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_18</item>
+        <item name="android:textColor">@color/tv_color_2</item>
+    </style>
+
+    <style name="tv_color_2_19">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_19</item>
+        <item name="android:textColor">@color/tv_color_2</item>
+    </style>
+
+    <style name="tv_color_2_20">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_20</item>
+        <item name="android:textColor">@color/tv_color_3</item>
+    </style>
+
+
+    <!--三级颜色-->
+    <style name="tv_color_3_10">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_10</item>
+        <item name="android:textColor">@color/tv_color_3</item>
+    </style>
+
+    <style name="tv_color_3_11">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_11</item>
+        <item name="android:textColor">@color/tv_color_3</item>
+    </style>
+
+    <style name="tv_color_3_12">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_12</item>
+        <item name="android:textColor">@color/tv_color_3</item>
+    </style>
+
+    <style name="tv_color_3_13">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_13</item>
+        <item name="android:textColor">@color/tv_color_3</item>
+    </style>
+
+    <style name="tv_color_3_14">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_14</item>
+        <item name="android:textColor">@color/tv_color_3</item>
+    </style>
+
+    <style name="tv_color_3_15">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_15</item>
+        <item name="android:textColor">@color/tv_color_3</item>
+    </style>
+
+    <style name="tv_color_3_16">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:textColor">@color/tv_color_3</item>
+    </style>
+
+    <style name="tv_color_3_17">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_17</item>
+        <item name="android:textColor">@color/tv_color_3</item>
+    </style>
+
+    <style name="tv_color_3_18">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_18</item>
+        <item name="android:textColor">@color/tv_color_3</item>
+    </style>
+
+    <style name="tv_color_3_19">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_19</item>
+        <item name="android:textColor">@color/tv_color_3</item>
+    </style>
+
+    <style name="tv_color_3_20">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_20</item>
+        <item name="android:textColor">@color/tv_color_3</item>
+    </style>
+
+    <!--四级颜色-->
+    <style name="tv_color_4_10">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_10</item>
+        <item name="android:textColor">@color/tv_color_4</item>
+    </style>
+
+    <style name="tv_color_4_11">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_11</item>
+        <item name="android:textColor">@color/tv_color_4</item>
+    </style>
+
+    <style name="tv_color_4_12">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_12</item>
+        <item name="android:textColor">@color/tv_color_4</item>
+    </style>
+
+    <style name="tv_color_4_13">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_13</item>
+        <item name="android:textColor">@color/tv_color_4</item>
+    </style>
+
+    <style name="tv_color_4_14">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_14</item>
+        <item name="android:textColor">@color/tv_color_4</item>
+    </style>
+
+    <style name="tv_color_4_15">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_15</item>
+        <item name="android:textColor">@color/tv_color_4</item>
+    </style>
+
+    <style name="tv_color_4_16">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:textColor">@color/tv_color_4</item>
+    </style>
+
+    <style name="tv_color_4_17">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_17</item>
+        <item name="android:textColor">@color/tv_color_4</item>
+    </style>
+
+    <style name="tv_color_4_18">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_18</item>
+        <item name="android:textColor">@color/tv_color_4</item>
+    </style>
+
+    <style name="tv_color_4_19">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_19</item>
+        <item name="android:textColor">@color/tv_color_4</item>
+    </style>
+
+    <style name="tv_color_4_20">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_20</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!--白色颜色-->
+    <style name="tv_white_10">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_10</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="tv_white_11">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_11</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="tv_white_12">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_12</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="tv_white_13">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_13</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="tv_white_14">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_14</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="tv_white_15">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_15</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="tv_white_16">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="tv_white_17">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_17</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="tv_white_18">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_18</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="tv_white_19">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_19</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="tv_white_20">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_20</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+</resources>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--背景色-->
+    <color name="bg_color_1">@color/grey_5f5</color>
+    <color name="bg_color_2">@color/black_020</color>
+
+    <!--textView 颜色-->
+    <!--一级颜色-->
+    <color name="tv_color_1">@color/black_333</color>
+    <!--二级颜色-->
+    <color name="tv_color_2">@color/grey_aaa</color>
+    <!--三级颜色-->
+    <color name="tv_color_3">#777777</color>
+    <!--四级颜色-->
+    <color name="tv_color_4">@color/blue_1f2</color>
+
+
+    <!--button 颜色-->
+    <color name="btn_primary">@color/black_020</color>
+    <color name="btn_border">#DFDFDF</color>
+
+    <!--透明-->
+    <color name="transparent">#00000000</color>
+    <color name="transparent_90">#1A000000</color>
+    <color name="transparent_80">#33000000</color>
+    <color name="transparent_70">#4D000000</color>
+    <color name="transparent_60">#66000000</color>
+    <color name="transparent_50">#80000000</color>
+    <color name="transparent_40">#99000000</color>
+    <color name="transparent_30">#B3000000</color>
+    <color name="transparent_20">#CC000000</color>
+    <color name="transparent_10">#E6000000</color>
+
+    <!--白色 透明度-->
+    <color name="white">#FFFFFF</color>
+    <color name="white_90">#1AFFFFFF</color>
+    <color name="white_80">#33FFFFFF</color>
+    <color name="white_70">#4DFFFFFF</color>
+    <color name="white_60">#66FFFFFF</color>
+    <color name="white_50">#80FFFFFF</color>
+    <color name="white_40">#99FFFFFF</color>
+    <color name="white_30">#B3FFFFFF</color>
+    <color name="white_20">#CCFFFFFF</color>
+    <color name="white_10">#E6FFFFFF</color>
+
+    <!--黑色 透明度-->
+    <color name="black">#000000</color>
+    <color name="black_90">#1A000000</color>
+    <color name="black_80">#33000000</color>
+    <color name="black_70">#4D000000</color>
+    <color name="black_60">#66000000</color>
+    <color name="black_50">#80000000</color>
+    <color name="black_40">#99000000</color>
+    <color name="black_30">#B3000000</color>
+    <color name="black_25">#19000000</color>
+    <color name="black_20">#CC000000</color>
+    <color name="black_15">#26000000</color>
+    <color name="black_10">#E6000000</color>
+
+    <color name="black_333">#333333</color>
+    <color name="black_666">#666666</color>
+    <color name="black_525">#252525</color>
+    <color name="black_525_50">#80252525</color>
+    <color name="black_020">#202020</color>
+    <color name="black_626">#292626</color>
+
+    <!--灰色-->
+    <color name="grey">#808080</color>
+    <color name="grey_90">#1A808080</color>
+    <color name="grey_80">#33808080</color>
+    <color name="grey_70">#4D808080</color>
+    <color name="grey_60">#66808080</color>
+    <color name="grey_50">#80808080</color>
+    <color name="grey_40">#99808080</color>
+    <color name="grey_30">#B3808080</color>
+    <color name="grey_20">#CC808080</color>
+    <color name="grey_10">#E6808080</color>
+    <color name="grey_666">#666666</color>
+    <color name="grey_6e6">#FFE6E6E6</color>
+    <color name="grey_aaa">#aaaaaa</color>
+    <color name="grey_999">#999999</color>
+    <color name="grey_ae0">#D7DAE0</color>
+    <color name="grey_5f5">#F5F5F5</color>
+    <color name="grey_777">#FF777777</color>
+    <color name="grey_8f8">#FFF8F8F8</color>
+    <color name="grey_ccc">#cccccc</color>
+
+    <!--红色-->
+    <color name="red">#FF0000</color>
+
+    <!--<粉色-->
+    <color name="pink">#FF69B4</color>
+    <color name="pink_1d9">#FFFCC1D9</color>
+    <color name="pink_cea">#FFFFDCEA</color>
+    <color name="pink_3b3">#FFFD83B3</color>
+    <color name="pink_96a">#FFFF69A6</color>
+    <color name="pink_ad1">#FFFF8AD1</color>
+    <color name="pink_0ec">#FFFFE0EC</color>
+    <color name="pink_1b2">#FFFD81B2</color>
+    <color name="pink_6c3">#FFFF66C3</color>
+    <color name="pink_3db">#FFFFA3DB</color>
+
+    <!--蓝色-->
+    <color name="blue">#0000FF</color>
+    <color name="blue_1f2">#2681F2</color>
+    <color name="blue_5f5">#9585F5</color>
+    <color name="blue_7ff">#FF99D7FF</color>
+    <color name="blue_eff">#FFD4EEFF</color>
+    <color name="blue_5ff">#FF43B5FF</color>
+    <color name="blue_2ff">#FFB4E2FF</color>
+    <color name="blue_7ec">#FF8787EC</color>
+    <color name="blue_8ff">#FFF8F8FF</color>
+    <color name="blue_6ff">#FFA0E6FF</color>
+    <color name="blue_60d5ff">#FF60D5FF</color>
+
+    <!--橙色-->
+    <color name="orange">#808080</color>
+    <color name="orange_600">#FF6600</color>
+    <color name="orange_e3f">#FF6E3F</color>
+    <color name="orange_054">#FFFFB054</color>
+
+    <!--黄色-->
+    <color name="yellow">#FFFF00</color>
+    <color name="yellow_8AD">#FFFFE8AD</color>
+
+
+    <!--绿色-->
+    <color name="green">#008000</color>
+    <color name="green_869">#FF82E869</color>
+
+
+</resources>

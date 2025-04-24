@@ -5,13 +5,16 @@ plugins {
 apply from: '../../common.gradle'
 
 android {
-    namespace 'com.frame.network'
+    namespace 'com.frame.net'
 }
 
 dependencies {
-    implementation config.okhttp3
-    implementation config.rxhttp
-    kapt config.rxhttpCompiler
+    implementation project(':frame:f_base')
+    implementation project(':tools:t_logger')
+
+    api config.okhttp3
+    api config.rxhttp
+    ksp config.rxhttpCompiler
 
     implementation config.liveEventBus
 }

@@ -1,11 +1,12 @@
 ext {
-    android = [applicationId       : "com.james.mvvm",
-               compileSdk          : 34,
-               minSdk              : 24,
-               targetSdk           : 34,
-               versionCode         : 100,
-               versionName         : "1.0.0",
-               defaultPublishConfig: "release",
-               publishNonDefault   : true
+    android = [
+            applicationId       : "com.james.project",
+            compileSdk          : 35,
+            minSdk              : 24,
+            targetSdk           : 34,
+            versionCode         : 100,
+            versionName         : "1.0.0",
+            defaultPublishConfig: "release",
+            publishNonDefault   : true
     ]
 }

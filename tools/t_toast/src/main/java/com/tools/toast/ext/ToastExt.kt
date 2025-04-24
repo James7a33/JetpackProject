@@ -1,6 +1,5 @@
 package com.tools.toast.ext
 
-import com.hjq.toast.ToastParams
 import com.hjq.toast.Toaster
 import com.tools.toast.ToasterUtils
 

@@ -100,7 +100,7 @@ fastBle = "2.4.0"
 #查看媒体全屏
 bigMedia = "androidx-8.0.2"
 
-#标题栏
+#标题栏想
 titleBar = "10.5"
 
 #下拉刷新，上拉加载
@@ -222,8 +222,8 @@ updateAppUtils = { group = "com.teprinciple", name = "updateapputilsx", version.
 ########################################################## UI ################################################################
 
 #Banner
-banner = { group = "com.github.zhpanvip", name = "bannerviewpager", version.ref = "banner" }
-banner2 = { group = "io.github.youth5201314", name = "banner", version.ref = "banner2" }
+banner-zhpanvip = { group = "com.github.zhpanvip", name = "bannerviewpager", version.ref = "banner" }
+banner-youth = { group = "io.github.youth5201314", name = "banner", version.ref = "banner2" }
 
 #悬浮窗
 floatingView = { group = "com.imuxuan", name = "floatingview", version.ref = "floating" }
@@ -233,8 +233,8 @@ roundImg = { group = "com.makeramen", name = "roundedimageview", version.ref = "
 circleImg = { group = "de.hdodenhof", name = "circleimageview", version.ref = "circleImg" }
 
 #阴影
-shadowLayout = { group = "com.github.lihangleo2", name = "ShadowLayout", version.ref = "shadowLayout" }
-shadowShape = { group = "com.github.JavaNoober.BackgroundLibrary", name = "libraryx", version.ref = "shadowShape" }
+shadow-layout = { group = "com.github.lihangleo2", name = "ShadowLayout", version.ref = "shadowLayout" }
+shadow-background = { group = "com.github.JavaNoober.BackgroundLibrary", name = "libraryx", version.ref = "shadowShape" }
 
 #PDF
 pdfView = { group = "com.github.mhiew", name = "android-pdf-viewer", version.ref = "pdfView" }
@@ -253,7 +253,7 @@ fastBle = { group = "com.github.Jasonchenlijian", name = "FastBle", version.ref 
 bigMedia = { group = "com.github.SherlockGougou", name = "BigImageViewPager", version.ref = "bigMedia" }
 
 #SVGA 动画播放
-svgaPlayer = { group = "com.opensource.svgaplayer-android", name = "SVGAPlayer-Android", version.ref = "svgaPlayer" }
+svgaPlayer = { group = "com.github.yyued", name = "SVGAPlayer-Android", version.ref = "svgaPlayer" }
 svgaGlidePlugin = { group = "com.github.YvesCheung", name = "SVGAGlidePlugin", version.ref = "svgaGlidePlugin" }
 
 

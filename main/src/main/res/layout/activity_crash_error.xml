@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/error_activity_image"
+        android:layout_width="400dp"
+        android:layout_height="300dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_crash_error" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/tv_color_1_18"
+        android:layout_marginTop="@dimen/dp_40"
+        android:gravity="center"
+        android:text="@string/error_activity_error_occurred_explanation"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <com.noober.background.view.BLTextView
+        android:id="@+id/error_activity_restart_button"
+        style="@style/tv_white_14"
+        android:layout_marginTop="@dimen/dp_40"
+        android:paddingLeft="@dimen/dp_40"
+        android:paddingTop="@dimen/dp_10"
+        android:paddingRight="@dimen/dp_40"
+        android:paddingBottom="@dimen/dp_10"
+        android:text="@string/error_activity_restart_app"
+        app:bl_corners_radius="@dimen/dp_10"
+        app:bl_solid_color="@color/black_60" />
+
+    <com.noober.background.view.BLTextView
+        android:id="@+id/error_activity_more_info_button"
+        style="@style/tv_white_14"
+        android:layout_marginTop="@dimen/dp_20"
+        android:paddingLeft="@dimen/dp_40"
+        android:paddingTop="@dimen/dp_10"
+        android:paddingRight="@dimen/dp_40"
+        android:paddingBottom="@dimen/dp_10"
+        android:text="@string/error_activity_error_details"
+        app:bl_corners_radius="@dimen/dp_10"
+        app:bl_solid_color="@color/red" />
+</LinearLayout>

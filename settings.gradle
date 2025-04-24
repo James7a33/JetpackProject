@@ -46,13 +46,15 @@ dependencyResolutionManagement {
 
 rootProject.name = "JamesMvvm"
 include ':app'
-//include':frame:f_network'
-//include':frame:f_framework'
-//include':frame:f_common'
-//include':frame:f_res'
-include ':frame:f_base'
-include ':frame:f_net'
+include ':main'
+include ':res'
 
+//网络
+include ':frame:f_net'
+//架构
+include ':frame:f_base'
+//公共基础
+include ':frame:f_common'
 
 //数据库
 include ':tools:t_db'
@@ -70,3 +72,10 @@ include ':tools:t_logger'
 include ':tools:t_toast'
 //权限
 include ':tools:t_permission'
+//dialog
+include ':tools:t_dialog'
+
+
+//业务
+include ':business:b_bean'
+include ':business:b_common'

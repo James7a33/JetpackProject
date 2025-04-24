@@ -1,0 +1,15 @@
+plugins {
+    alias(libs.plugins.android.library)
+}
+
+apply from: '../../common.gradle'
+
+android {
+    namespace 'com.tools.dialog'
+}
+
+dependencies {
+    implementation project(':res')
+    implementation libs.androidx.appcompat
+    implementation config.xpopup
+}

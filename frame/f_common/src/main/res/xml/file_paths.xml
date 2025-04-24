@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--友盟-->
+    <external-files-path
+        name="umeng_cache"
+        path="umeng_cache/" />
+    <!-- QQ 官方分享SDK 共享路径 -->
+    <root-path
+        name="opensdk_root"
+        path="" />
+
+    <external-files-path
+        name="opensdk_external"
+        path="Images/tmp" />
+
+    <!-- Sina 新浪微博 -->
+    <external-files-path
+        name="share_files"
+        path="." />
+
+    <!-- 这个是保存拍照图片的路径,必须配置。 -->
+    <external-files-path
+        name="images"
+        path="Pictures" />
+    <!--  外置SDK文件路径    -->
+    <root-path
+        name="root_path"
+        path="/" />
+
+    <files-path
+        name="files_path"
+        path="/" />
+
+    <cache-path
+        name="cache_path"
+        path="/" />
+
+    <external-path
+        name="external_path"
+        path="/" />
+
+    <external-files-path
+        name="external_file_path"
+        path="/" />
+
+    <external-cache-path
+        name="external_cache_path"
+        path="/" />
+
+    <!--为了适配所有路径可以设置 path = "." -->
+    <external-path
+        name="tt_external_root"
+        path="." />
+    <external-path
+        name="tt_external_download"
+        path="Download" />
+    <external-files-path
+        name="tt_external_files_download"
+        path="Download" />
+    <files-path
+        name="tt_internal_file_download"
+        path="Download" />
+    <cache-path
+        name="tt_internal_cache_download"
+        path="Download" />
+</paths>

@@ -1,44 +1,146 @@
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
 }
 
+// 读取 keystore.properties 文件
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+if (!keystorePropertiesFile.exists()) {
+    throw new FileNotFoundException("Keystore properties file not found at path: ${keystorePropertiesFile.absolutePath}")
+}
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+
+apply from: '../common.gradle'
+def ext = rootProject.ext.android
+
 android {
-    namespace 'com.james.project'
-    compileSdk 35
+    namespace ext.applicationId
 
     defaultConfig {
-        applicationId "com.james.project"
-        minSdk 24
-        targetSdk 35
-        versionCode 1
-        versionName "1.0"
+        applicationId ext.applicationId
 
+        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        release {
+            keyAlias keystoreProperties['releaseKeyAlias']
+            keyPassword keystoreProperties['releaseStorePassword']
+            storeFile file(keystoreProperties['releaseStoreFile'])
+            storePassword keystoreProperties['releaseStorePassword']
+        }
+
+        debug {
+            keyAlias keystoreProperties['debugKeyAlias']
+            keyPassword keystoreProperties['debugKeyPassword']
+            storeFile file(keystoreProperties['debugStoreFile'])
+            storePassword keystoreProperties['debugStorePassword']
+        }
     }
 
     buildTypes {
         release {
-            minifyEnabled false
+            manifestPlaceholders = [APP_NAME: "@string/app_release_name"]
+            resValue "xml", "network_security_config", "@xml/network_security_config_release"
+            //正式域名
+            minifyEnabled true    //是否开启混淆，开启之后不能debug
+            zipAlignEnabled true  // Zipalign压缩优化
+            shrinkResources true  //删除无效的Resource
+            debuggable true
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            applicationIdSuffix ".debug"
+            manifestPlaceholders = [APP_NAME: "@string/app_debug_name"]
+            resValue "xml", "network_security_config", "@xml/network_security_config_debug"
+            //测试域名
+            minifyEnabled false    //是否开启混淆，开启之后不能debug
+            zipAlignEnabled true  // Zipalign压缩优化
+            shrinkResources false  //删除无效的Resource
+            debuggable true
+            signingConfig signingConfigs.debug
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
+
+    splits {
+        abi {
+            enable true
+            reset()
+            // 根据 defaultConfig 中的 abiFilters 设置 include
+            var isAbiFilters = !defaultConfig.ndk.abiFilters.isEmpty()
+            if (isAbiFilters) {
+                include 'armeabi-v7a', 'arm64-v8a'
+            }
+            universalApk isAbiFilters // 生成包含所有 ABI 的 APK
+        }
     }
-    kotlinOptions {
-        jvmTarget = '11'
+
+    flavorDimensions "channel"
+
+    productFlavors {
+        gw {
+            dimension "channel"
+            buildConfigField "String", "CHANNEL_CODE", "\"gw\";"
+        }
+        google {
+            dimension "channel"
+            buildConfigField "String", "CHANNEL_CODE", "\"google\";"
+        }
+        huawei {
+            dimension "channel"
+            buildConfigField "String", "CHANNEL_CODE", "\"huawei\";"
+        }
+        xiaomi {
+            dimension "channel"
+            buildConfigField "String", "CHANNEL_CODE", "\"xiaomi\";"
+        }
+        oppo {
+            dimension "channel"
+            buildConfigField "String", "CHANNEL_CODE", "\"oppo\";"
+        }
+        vivo {
+            dimension "channel"
+            buildConfigField "String", "CHANNEL_CODE", "\"vivo\";"
+        }
+    }
+
+    //打包时移出相关文件
+    packagingOptions {
+        exclude 'AndroidManifest.xml'
+    }
+
+    android.applicationVariants.configureEach { variant ->
+        println "Variant: ${variant.name}, Build Type: ${variant.buildType.name}"
+        println "Manifest Placeholders: ${variant.buildType.manifestPlaceholders}"
+
+        variant.outputs.configureEach { output ->
+            def abi = output.getFilter(com.android.build.OutputFile.ABI)
+            if (abi == null) abi = "" // 兼容
+            // 获取 manifest 中的应用名称
+            def appName = variant.buildType.manifestPlaceholders["APP_NAME"] ?: "UnknownApp"
+
+            println "App Name: ${appName}"
+
+            // 生成动态文件名
+            if (abi.isEmpty()) {
+                outputFileName = "app_${"音悦"}_${variant.buildType.name}_V${variant.versionName}_${releaseTime()}.apk"
+            } else {
+                outputFileName = "app_${"音悦"}_${variant.buildType.name}_${abi}_V${variant.versionName}_${releaseTime()}.apk"
+            }
+        }
     }
 }
 
-dependencies {
+static def releaseTime() {
+    return new Date().format("yyyyMMddHHmmss", TimeZone.getTimeZone("GMT+08"))
+}
 
-    implementation libs.androidx.core.ktx
-    implementation libs.androidx.appcompat
-    implementation libs.material
-    testImplementation libs.junit
-    androidTestImplementation libs.androidx.junit
-    androidTestImplementation libs.androidx.espresso.core
-    implementation "androidx.recyclerview:recyclerview:1.4.0"
+
+dependencies {
+    implementation project(':main')
 }

@@ -9,7 +9,7 @@ android {
 }
 
 dependencies {
-    implementation project(":frame:f_base")
+//    implementation project(":frame:f_base")
 
     implementation config.agentWeb
 }

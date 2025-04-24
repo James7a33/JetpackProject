@@ -12,7 +12,7 @@ dependencies {
     implementation project(':tools:t_logger')
 
     api config.glide
-    kapt config.glideCompiler
+    ksp config.glideCompiler
     annotationProcessor config.glideCompiler
 
     implementation config.svgaPlayer

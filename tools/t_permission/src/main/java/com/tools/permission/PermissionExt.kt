@@ -1,41 +1,10 @@
 package com.tools.permission
 
 import android.content.Context
-import android.os.Build
 import com.hjq.permissions.OnPermissionCallback
-import com.hjq.permissions.Permission
 import com.hjq.permissions.XXPermissions
 import com.tools.logger.logD
 import com.tools.permission.interceptor.PermissionInterceptor
-
-/**
- * @Author: james
- * @Date: 2023/9/25 15:37
- * @Description:
- */
-
-val CAMERA_STORAGE by lazy {
-    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) arrayOf(
-        Permission.CAMERA,
-        Permission.READ_EXTERNAL_STORAGE,
-        Permission.WRITE_EXTERNAL_STORAGE
-    ) else arrayOf(
-        Permission.CAMERA,
-        Permission.READ_MEDIA_VIDEO,
-        Permission.READ_MEDIA_AUDIO,
-        Permission.READ_MEDIA_IMAGES,
-    )
-}
-
-val STORAGE by lazy {
-    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) arrayOf(
-        Permission.READ_EXTERNAL_STORAGE,
-        Permission.WRITE_EXTERNAL_STORAGE
-    ) else arrayOf(
-        Permission.READ_MEDIA_VIDEO,
-        Permission.READ_MEDIA_IMAGES,
-    )
-}
 
 /**
  * 检测权限

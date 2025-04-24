@@ -1,6 +1,5 @@
 package com.frame.net
 
-import com.jeremyliao.liveeventbus.BuildConfig
 import rxhttp.wrapper.annotation.DefaultDomain
 
 /**

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--公共 start-->
+    <string name="app_release_name">音悦</string>
+    <string name="app_debug_name">音悦_debug</string>
+
+    <string name="confirmed">确定</string>
+    <string name="confirm">确认</string>
+    <string name="submit">提交</string>
+    <string name="empty">清空</string>
+    <string name="next">下一步</string>
+    <string name="save">保存</string>
+    <string name="save_info">保存资料</string>
+
+    <string name="reject">拒绝</string>
+    <string name="consent">同意</string>
+    <string name="tips">提示</string>
+    <string name="cancel">取消</string>
+    <!--公共 end-->
+
+
+    <!--加载 start-->
+    <string name="loading">加载中…</string>
+    <string name="loading_network">请求网络中…</string>
+    <string name="loading_network_error">加载失败…</string>
+    <string name="loading_network_empty">暂无数据</string>
+    <!--加载 end-->
+
+    <!--crash start-->
+    <string name="error_activity_error_occurred_explanation">发生意外错误。\n抱歉，给您带来不便。</string>
+    <string name="error_activity_restart_app">重新启动</string>
+    <string name="error_activity_close_app">关闭程序</string>
+    <string name="error_activity_error_details">错误日志</string>
+    <string name="error_activity_error_details_title">错误详情</string>
+    <string name="error_activity_error_details_close">关闭</string>
+    <string name="error_activity_error_details_copy">复制日志</string>
+    <string name="error_activity_error_details_clipboard_label">错误信息</string>
+    <!--crash end-->
+
+    <!--app start-->
+    <string name="splash_skip_s">跳过 %s</string>
+    <string name="splash_skip">跳过</string>
+    <string name="splash_tip">“一言一语，悦动心声”</string>
+    <string name="again_logout">再按一次，退出程序</string>
+    <string-array name="main_tab_array">
+        <item>心动</item>
+        <item>动态</item>
+        <item>消息</item>
+        <item>我的</item>
+    </string-array>
+    <!--app end-->
+</resources>

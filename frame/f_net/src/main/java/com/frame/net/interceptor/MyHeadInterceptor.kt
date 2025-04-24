@@ -4,6 +4,8 @@ package com.frame.net.interceptor
 import android.annotation.SuppressLint
 import android.os.Build
 import android.provider.Settings
+import com.frame.base.appContext
+import com.tools.logger.logD
 import okhttp3.Interceptor
 import okhttp3.Response
 import java.security.MessageDigest
@@ -22,7 +24,7 @@ class MyHeadInterceptor : Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
         val builder = chain.request().newBuilder()
-            .addHeader("Authorization", SPUtils.getInstance().getString("user_token"))
+//            .addHeader("Authorization", SPUtils.getInstance().getString("user_token"))
             .addHeader("signature", "")
             .addHeader("oaid", "")
             .addHeader("currentTime", "")

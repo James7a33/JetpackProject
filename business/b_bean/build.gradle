@@ -1,0 +1,13 @@
+plugins {
+    alias(libs.plugins.android.library)
+}
+
+apply from: '../../common.gradle'
+
+android {
+    namespace 'com.business.bean'
+}
+
+dependencies {
+
+}
