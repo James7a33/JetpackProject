@@ -27,6 +27,7 @@ object ARouterPath {
     object Login {
         //登录页
         const val LOGIN = "/login/activity/LoginActivity"
+
     }
 
     object Mine {
