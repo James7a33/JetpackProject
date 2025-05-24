@@ -18,7 +18,7 @@ import com.scwang.smart.refresh.layout.SmartRefreshLayout
 import com.tencent.mmkv.MMKV
 import me.jessyan.autosize.AutoSizeConfig
 import rxhttp.RxHttpPlugins
-import com.james.res.R as Rs
+import com.main.res.R as Rs
 
 /**
  * @Author: james
