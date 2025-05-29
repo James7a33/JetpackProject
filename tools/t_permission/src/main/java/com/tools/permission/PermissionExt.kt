@@ -19,7 +19,7 @@ fun ckPermission(
     permissionDesc: String = "",
     callback: (isSuccess: Boolean) -> Unit
 ) {
-    if (!XXPermissions.isGranted(context, *permissions)) {
+    if (!XXPermissions.isGrantedPermissions(context, *permissions)) {
         XXPermissions.with(context)
             .permission(permissions)
             .interceptor(PermissionInterceptor(permissionDesc))
@@ -38,7 +38,7 @@ fun ckPermission(
                         "请求权限${permission}".logD("ckPermission")
                     }
                     //判判断一个或多个权限是否全部授予了
-                    callback.invoke(XXPermissions.isGranted(context, permissions))
+                    callback.invoke(XXPermissions.isGrantedPermissions(context, permissions))
                 }
 
                 /**
@@ -56,10 +56,10 @@ fun ckPermission(
                             .logD("ckPermission")
                     }
                     //判判断一个或多个权限是否全部授予了
-                    callback.invoke(XXPermissions.isGranted(context, permissions))
+                    callback.invoke(XXPermissions.isGrantedPermissions(context, permissions))
                 }
             })
     } else {
-        callback.invoke(XXPermissions.isGranted(context, permissions))
+        callback.invoke(XXPermissions.isGrantedPermissions(context, permissions))
     }
 }

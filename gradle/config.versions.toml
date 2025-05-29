@@ -82,7 +82,7 @@ updateApp = "1.2.3"
 updateAppUtils = "2.3.0"
 
 #权限请求
-xxPermissions = "20.0"
+xxPermissions = "22.2"
 
 #吐司
 toast = "12.8"

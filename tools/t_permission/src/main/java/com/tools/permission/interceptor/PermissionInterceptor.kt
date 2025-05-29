@@ -1,7 +1,9 @@
 package com.tools.permission.interceptor
 
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.Context
+import android.content.DialogInterface
 import android.content.res.Configuration
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -16,11 +18,12 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.PopupWindow
 import android.widget.TextView
+import androidx.annotation.NonNull
 import com.hjq.permissions.OnPermissionCallback
 import com.hjq.permissions.OnPermissionInterceptor
 import com.hjq.permissions.OnPermissionPageCallback
 import com.hjq.permissions.Permission
-import com.hjq.permissions.PermissionFragment
+import com.hjq.permissions.PermissionFragmentFactory
 import com.hjq.permissions.XXPermissions
 import com.lxj.xpopup.XPopup
 import com.tools.permission.R
@@ -34,7 +37,7 @@ import com.tools.toast.ext.toastLong
  */
 class PermissionInterceptor(private val permissionDesc: String) :
     OnPermissionInterceptor {
-    private val handler = Handler(Looper.getMainLooper())
+    private val HANDLER: Handler = Handler(Looper.getMainLooper())
 
     /** 权限申请标记  */
     private var mRequestFlag = false
@@ -45,11 +48,14 @@ class PermissionInterceptor(private val permissionDesc: String) :
     private var mPermissionPopup: PopupWindow? = null
 
     override fun launchPermissionRequest(
-        activity: Activity, allPermissions: MutableList<String>, callback: OnPermissionCallback?
+        activity: Activity,
+        fragmentFactory: PermissionFragmentFactory<*, *>,
+        requestPermissions: MutableList<String>,
+        callback: OnPermissionCallback?
     ) {
         mRequestFlag = true
-        val deniedPermissions = XXPermissions.getDenied(activity, allPermissions)
-        val message = if (permissionDesc.isEmpty()) {
+        val deniedPermissions = XXPermissions.getDeniedPermissions(activity, requestPermissions)
+        val mPermissionDescription = if (permissionDesc.isEmpty()) {
             activity.getString(
                 R.string.common_permission_message_normal,
                 PermissionNameConvert.getPermissionString(activity, deniedPermissions)
@@ -67,11 +73,11 @@ class PermissionInterceptor(private val permissionDesc: String) :
         val decorView = activity.window.decorView as ViewGroup
         val activityOrientation = activity.resources.configuration.orientation
         var showPopupWindow = activityOrientation == Configuration.ORIENTATION_PORTRAIT
-        for (permission in allPermissions) {
-            if (!XXPermissions.isSpecial(permission)) {
+        for (permission in requestPermissions) {
+            if (!XXPermissions.isSpecialPermission(permission)) {
                 continue
             }
-            if (XXPermissions.isGranted(activity, permission)) {
+            if (XXPermissions.isGrantedPermissions(activity, permission)) {
                 continue
             }
             if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R &&
@@ -85,32 +91,46 @@ class PermissionInterceptor(private val permissionDesc: String) :
             break
         }
         if (showPopupWindow) {
-            PermissionFragment.launch(activity, ArrayList<String>(allPermissions), this, callback)
+            dispatchPermissionRequest(activity, requestPermissions, fragmentFactory, callback)
             // 延迟 300 毫秒是为了避免出现 PopupWindow 显示然后立马消失的情况
             // 因为框架没有办法在还没有申请权限的情况下，去判断权限是否永久拒绝了，必须要在发起权限申请之后
             // 所以只能通过延迟显示 PopupWindow 来做这件事，如果 300 毫秒内权限申请没有结束，证明本次申请的权限没有永久拒绝
-            handler.postDelayed(
-                {
-                    if (!mRequestFlag) {
-                        return@postDelayed
-                    }
-                    if (activity.isFinishing || (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1 && activity.isDestroyed)) {
-                        return@postDelayed
-                    }
-                    showPopupWindow(activity, decorView, message)
-                }, 300
-            )
+            HANDLER.postDelayed({
+                if (!mRequestFlag) {
+                    return@postDelayed
+                }
+                if (activity.isFinishing || activity.isDestroyed) {
+                    return@postDelayed
+                }
+                showPopupWindow(activity, decorView, mPermissionDescription)
+            }, 300)
         } else {
             // 注意：这里的 Dialog 只是示例，没有用 DialogFragment 来处理 Dialog 生命周期
-            XPopup.Builder(activity).asConfirm(
-                activity.getString(R.string.common_permission_description), message
-            ) {
-                PermissionFragment.launch(
-                    activity, ArrayList<String>(allPermissions),
-                    this@PermissionInterceptor, callback
-                )
-            }.show()
+            showDialog(
+                activity,
+                activity.getString(R.string.common_permission_description),
+                mPermissionDescription,
+                false,
+                activity.getString(R.string.common_permission_granted),
+                { dialog: DialogInterface, which: Int ->
+                    dialog.dismiss()
+                    dispatchPermissionRequest(
+                        activity,
+                        requestPermissions,
+                        fragmentFactory,
+                        callback
+                    )
+                },
+                activity.getString(R.string.common_permission_denied),
+                DialogInterface.OnClickListener showDialog@{ dialog: DialogInterface, which: Int ->
+                    dialog.dismiss()
+                    if (callback == null) {
+                        return@showDialog
+                    }
+                    callback.onDenied(deniedPermissions, false)
+                })
         }
+        super.launchPermissionRequest(activity, fragmentFactory, requestPermissions, callback)
     }
 
     override fun grantedPermissionRequest(
@@ -262,7 +282,7 @@ class PermissionInterceptor(private val permissionDesc: String) :
                         override fun onDenied() {
                             showPermissionSettingDialog(
                                 activity, allPermissions,
-                                XXPermissions.getDenied(activity, allPermissions), callback
+                                XXPermissions.getDeniedPermissions(activity, allPermissions), callback
                             )
                         }
                     })
@@ -284,5 +304,36 @@ class PermissionInterceptor(private val permissionDesc: String) :
                 context.getString(R.string.common_permission_background_default_option_label)
         }
         return backgroundPermissionOptionLabel
+    }
+
+    /**
+     * 显示对话框
+     *
+     * @param activity                  Activity 对象
+     * @param dialogTitle               对话框标题
+     * @param dialogMessage             对话框消息
+     * @param dialogCancelable          对话框是否可取消
+     * @param confirmButtonText         对话框确认按钮文本
+     * @param confirmListener           对话框确认按钮点击事件
+     * @param cancelButtonText          对话框取消按钮文本
+     * @param cancelListener            对话框取消按钮点击事件
+     */
+    private fun showDialog(
+        @NonNull activity: Activity,
+        dialogTitle: String,
+        dialogMessage: String,
+        dialogCancelable: Boolean,
+        confirmButtonText: String,
+        confirmListener: DialogInterface.OnClickListener,
+        cancelButtonText: String,
+        cancelListener: DialogInterface.OnClickListener
+    ) {
+        AlertDialog.Builder(activity)
+            .setTitle(dialogTitle)
+            .setMessage(dialogMessage)
+            .setCancelable(dialogCancelable)
+            .setPositiveButton(confirmButtonText, confirmListener)
+            .setNegativeButton(cancelButtonText, cancelListener)
+            .show()
     }
 }
