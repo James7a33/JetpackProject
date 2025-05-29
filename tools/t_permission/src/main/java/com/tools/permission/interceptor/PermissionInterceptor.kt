@@ -55,6 +55,11 @@ class PermissionInterceptor(private val permissionDesc: String) :
     ) {
         mRequestFlag = true
         val deniedPermissions = XXPermissions.getDeniedPermissions(activity, requestPermissions)
+//        //如果权限被拒绝，不在进行权限提示，直接请求权限
+//        if (XXPermissions.isDoNotAskAgainPermissions(activity, requestPermissions)) {
+//            dispatchPermissionRequest(activity, requestPermissions, fragmentFactory, callback)
+//            return
+//        }
         val mPermissionDescription = if (permissionDesc.isEmpty()) {
             activity.getString(
                 R.string.common_permission_message_normal,
