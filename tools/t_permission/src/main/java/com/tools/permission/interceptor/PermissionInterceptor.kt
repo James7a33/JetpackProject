@@ -55,11 +55,11 @@ class PermissionInterceptor(private val permissionDesc: String) :
     ) {
         mRequestFlag = true
         val deniedPermissions = XXPermissions.getDeniedPermissions(activity, requestPermissions)
-//        //如果权限被拒绝，不在进行权限提示，直接请求权限
-//        if (XXPermissions.isDoNotAskAgainPermissions(activity, requestPermissions)) {
-//            dispatchPermissionRequest(activity, requestPermissions, fragmentFactory, callback)
-//            return
-//        }
+        //如果权限被拒绝，不在进行权限提示，直接请求权限
+        if (XXPermissions.isDoNotAskAgainPermissions(activity, requestPermissions)) {
+            dispatchPermissionRequest(activity, requestPermissions, fragmentFactory, callback)
+            return
+        }
         val mPermissionDescription = if (permissionDesc.isEmpty()) {
             activity.getString(
                 R.string.common_permission_message_normal,
@@ -111,31 +111,17 @@ class PermissionInterceptor(private val permissionDesc: String) :
             }, 300)
         } else {
             // 注意：这里的 Dialog 只是示例，没有用 DialogFragment 来处理 Dialog 生命周期
-            showDialog(
-                activity,
-                activity.getString(R.string.common_permission_description),
-                mPermissionDescription,
-                false,
-                activity.getString(R.string.common_permission_granted),
-                { dialog: DialogInterface, which: Int ->
-                    dialog.dismiss()
-                    dispatchPermissionRequest(
-                        activity,
-                        requestPermissions,
-                        fragmentFactory,
-                        callback
-                    )
-                },
-                activity.getString(R.string.common_permission_denied),
-                DialogInterface.OnClickListener showDialog@{ dialog: DialogInterface, which: Int ->
-                    dialog.dismiss()
-                    if (callback == null) {
-                        return@showDialog
-                    }
-                    callback.onDenied(deniedPermissions, false)
-                })
+            XPopup.Builder(activity).asConfirm(
+                activity.getString(R.string.common_permission_description), mPermissionDescription
+            ) {
+                dispatchPermissionRequest(
+                    activity,
+                    requestPermissions,
+                    fragmentFactory,
+                    callback
+                )
+            }.show()
         }
-        super.launchPermissionRequest(activity, fragmentFactory, requestPermissions, callback)
     }
 
     override fun grantedPermissionRequest(
@@ -275,7 +261,8 @@ class PermissionInterceptor(private val permissionDesc: String) :
                 activity.getString(R.string.common_permission_alert),
                 message
             ) {
-                XXPermissions.startPermissionActivity(activity,
+                XXPermissions.startPermissionActivity(
+                    activity,
                     deniedPermissions, object : OnPermissionPageCallback {
                         override fun onGranted() {
                             if (callback == null) {
@@ -286,8 +273,10 @@ class PermissionInterceptor(private val permissionDesc: String) :
 
                         override fun onDenied() {
                             showPermissionSettingDialog(
-                                activity, allPermissions,
-                                XXPermissions.getDeniedPermissions(activity, allPermissions), callback
+                                activity,
+                                allPermissions,
+                                XXPermissions.getDeniedPermissions(activity, allPermissions),
+                                callback
                             )
                         }
                     })
@@ -309,36 +298,5 @@ class PermissionInterceptor(private val permissionDesc: String) :
                 context.getString(R.string.common_permission_background_default_option_label)
         }
         return backgroundPermissionOptionLabel
-    }
-
-    /**
-     * 显示对话框
-     *
-     * @param activity                  Activity 对象
-     * @param dialogTitle               对话框标题
-     * @param dialogMessage             对话框消息
-     * @param dialogCancelable          对话框是否可取消
-     * @param confirmButtonText         对话框确认按钮文本
-     * @param confirmListener           对话框确认按钮点击事件
-     * @param cancelButtonText          对话框取消按钮文本
-     * @param cancelListener            对话框取消按钮点击事件
-     */
-    private fun showDialog(
-        @NonNull activity: Activity,
-        dialogTitle: String,
-        dialogMessage: String,
-        dialogCancelable: Boolean,
-        confirmButtonText: String,
-        confirmListener: DialogInterface.OnClickListener,
-        cancelButtonText: String,
-        cancelListener: DialogInterface.OnClickListener
-    ) {
-        AlertDialog.Builder(activity)
-            .setTitle(dialogTitle)
-            .setMessage(dialogMessage)
-            .setCancelable(dialogCancelable)
-            .setPositiveButton(confirmButtonText, confirmListener)
-            .setNegativeButton(cancelButtonText, cancelListener)
-            .show()
     }
 }
