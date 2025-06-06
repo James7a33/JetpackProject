@@ -271,7 +271,7 @@ mmkv = { group = "com.tencent", name = "mmkv", version.ref = "mmkv" }
 ############################################################ 阿里 ################################################################
 #路由
 arouter = { group = "com.alibaba", name = "arouter-api", version.ref = "arouter" }
-arouterCompiler = { group = "com.alibaba", name = "arouter-compiler", version.ref = "arouter" }
+arouter-compiler = { group = "com.alibaba", name = "arouter-compiler", version.ref = "arouter" }
 
 
 

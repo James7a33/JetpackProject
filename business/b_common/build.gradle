@@ -13,7 +13,11 @@ dependencies {
     api project(':tools:t_db')
 
     //tabLayout
-    config.tabLayout
-    config.tabLayout.viewPager1Delegate
-    config.tabLayout.viewPager2Delegate
+    api(config.tabLayout)
+    api(config.tabLayout.viewPager1Delegate)
+    api(config.tabLayout.viewPager2Delegate)
+
+    //ali 路由
+    api(config.arouter)
+    kapt(config.arouter.compiler)
 }

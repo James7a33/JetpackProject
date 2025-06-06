@@ -48,7 +48,7 @@ android {
             minifyEnabled true    //是否开启混淆，开启之后不能debug
             zipAlignEnabled true  // Zipalign压缩优化
             shrinkResources true  //删除无效的Resource
-            debuggable true
+            debuggable false
             signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
