@@ -13,7 +13,7 @@ import cat.ereza.customactivityoncrash.CustomActivityOnCrash
 import com.frame.base.ui.BaseVBActivity
 import com.frame.base.vm.BaseViewModel
 import com.frame.common.ext.setOnclick
-import com.james.main.databinding.ActivityCrashErrorBinding
+import com.project.main.databinding.ActivityCrashErrorBinding
 import com.tools.toast.ext.toastShort
 import com.main.res.R as Rs
 

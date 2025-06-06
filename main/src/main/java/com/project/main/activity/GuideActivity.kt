@@ -17,8 +17,8 @@ import com.frame.common.ext.getStringArrayExt
 import com.frame.common.ext.setOnclick
 import com.frame.common.ext.toStartActivity
 import com.gyf.immersionbar.ImmersionBar
-import com.james.main.databinding.ActivityGuideBinding
 import com.project.main.adapter.GuideAdapter
+import com.project.main.databinding.ActivityGuideBinding
 import com.project.main.vm.GuideVm
 import com.tools.logger.logA
 import com.zhpan.indicator.enums.IndicatorSlideMode

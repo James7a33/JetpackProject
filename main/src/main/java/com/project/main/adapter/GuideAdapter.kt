@@ -1,6 +1,6 @@
 package com.project.main.adapter
 
-import com.james.main.R
+import com.project.main.R
 import com.project.main.entity.GuideBean
 import com.zhpan.bannerview.BaseBannerAdapter
 import com.zhpan.bannerview.BaseViewHolder
