@@ -117,11 +117,11 @@ class GuideActivity : BaseVBActivity<GuideVm, ActivityGuideBinding>() {
         setOnclick(bind.tvNext) {
             mmAPP.encode(Constants.App.GUIDE, true)
             if(isLogin()){
-                toStartActivity(MainActivity::class.java)
-                closeActivity(this)
+                toStartActivity(ARouterPath.Main.MAIN)
             }else{
-                toStartActivity(ARouterPath.Login.LOGIN)
+                toStartActivity(ARouterPath.Main.MAIN)
             }
+            closeActivity(this)
         }
     }
 }

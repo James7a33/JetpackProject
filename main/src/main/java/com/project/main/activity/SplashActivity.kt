@@ -85,7 +85,7 @@ class SplashActivity : BaseVBActivity<BaseViewModel, ActivitySplashBinding>() {
         if (isLogin()) {
             toStartActivity(ARouterPath.Main.MAIN)
         } else {
-            toStartActivity(ARouterPath.Login.LOGIN)
+            toStartActivity(ARouterPath.Main.MAIN)
         }
         closeActivity(this)
     }
