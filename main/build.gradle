@@ -10,6 +10,7 @@ android {
 
 dependencies {
     api project(':frame:f_common')
+    api project(':business:b_common')
 
     // 异常捕获
     implementation config.crash

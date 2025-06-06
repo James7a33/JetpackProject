@@ -17,6 +17,7 @@ abstract class BaseVBFragment<VM : BaseViewModel, VB : ViewBinding> : BaseVMFrag
     BaseIView {
 
     private var _binding: VB? = null
+
     val bind: VB get() = _binding!!
 
     /**

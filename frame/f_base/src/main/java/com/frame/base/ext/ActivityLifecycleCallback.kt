@@ -1,10 +1,8 @@
-package com.frame.base.widget
+package com.frame.base.ext
 
 import android.app.Activity
 import android.app.Application
 import android.os.Bundle
-import com.frame.base.ext.addActivity
-import com.frame.base.ext.removeActivity
 import com.tools.logger.logD
 
 

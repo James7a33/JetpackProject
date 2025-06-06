@@ -1,7 +1,7 @@
 package com.tools.db.manage
 
 import com.tools.db.database.MyRoomDataBase
-import com.tools.db.entity.UserInfoBean
+import com.tools.db.bean.UserInfoBean
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 

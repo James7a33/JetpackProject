@@ -1,5 +1,6 @@
 package com.frame.common.ext
 
+import com.frame.common.utils.CountdownTimerUtils
 import com.tools.logger.logA
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -46,42 +47,42 @@ fun countDown(
 }
 
 
-///*懒加载 倒计时 */
-//val countdownTimerUtils: CountdownTimerUtils by lazy(mode = LazyThreadSafetyMode.SYNCHRONIZED) {
-//    CountdownTimerUtils()
-//}
-//
-///**
-// * 倒计时扩展函数 CountdownTimerUtil
-// *
-// * @param total     倒计     毫秒  默认60秒
-// * @param interval  间隔时间  毫秒
-// * @param isSecond  返回单位  true 秒 or false 毫秒
-// * @param onTick    isSecond true 秒 or false 毫秒
-// * @param onFinish  结束
-// */
-//fun countDown(
-//    total: Long,
-//    interval: Long = 1000,
-//    isSecond: Boolean = true,
-//    onTick: (Long) -> Unit,
-//    onFinish: () -> Unit
-//) {
-//    "倒计时=$total".logA("CountdownTimerUtil")
-//    countdownTimerUtils.setOnCountdownListener(object : CountdownTimerUtils.OnCountdownListener {
-//        override fun onTick(millisUntilFinished: Long) {
-//            "倒计时：$millisUntilFinished".logA("countDown")
-//            if (isSecond) {
-//                onTick.invoke(millisUntilFinished / interval)
-//            } else {
-//                onTick.invoke(millisUntilFinished)
-//            }
-//        }
-//
-//        override fun onFinish() {
-//            onFinish.invoke()
-//            countdownTimerUtils.cancelCountdown()
-//        }
-//    })
-//    countdownTimerUtils.startCountdown(total, interval)
-//}
+/*懒加载 倒计时 */
+val countdownTimerUtils: CountdownTimerUtils by lazy(mode = LazyThreadSafetyMode.SYNCHRONIZED) {
+    CountdownTimerUtils()
+}
+
+/**
+ * 倒计时扩展函数 CountdownTimerUtil
+ *
+ * @param total     倒计     毫秒  默认60秒
+ * @param interval  间隔时间  毫秒
+ * @param isSecond  返回单位  true 秒 or false 毫秒
+ * @param onTick    isSecond true 秒 or false 毫秒
+ * @param onFinish  结束
+ */
+fun countDown(
+    total: Long,
+    interval: Long = 1000,
+    isSecond: Boolean = true,
+    onTick: (Long) -> Unit,
+    onFinish: () -> Unit
+) {
+    "倒计时=$total".logA("CountdownTimerUtil")
+    countdownTimerUtils.setOnCountdownListener(object : CountdownTimerUtils.OnCountdownListener {
+        override fun onTick(millisUntilFinished: Long) {
+            "倒计时：$millisUntilFinished".logA("countDown")
+            if (isSecond) {
+                onTick.invoke(millisUntilFinished / interval)
+            } else {
+                onTick.invoke(millisUntilFinished)
+            }
+        }
+
+        override fun onFinish() {
+            onFinish.invoke()
+            countdownTimerUtils.cancelCountdown()
+        }
+    })
+    countdownTimerUtils.startCountdown(total, interval)
+}

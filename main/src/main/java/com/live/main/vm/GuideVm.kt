@@ -8,7 +8,7 @@ import com.frame.base.vm.BaseViewModel
 import com.live.main.entity.GuideBean
 import com.frame.common.ext.getStringArrayExt
 import java.util.ArrayList
-import com.james.res.R as Rs
+import com.main.res.R as Rs
 
 /**
  * @Author: james

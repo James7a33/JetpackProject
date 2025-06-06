@@ -1,4 +1,4 @@
-package comtools.dialog.ext
+package com.tools.dialog
 
 import android.annotation.SuppressLint
 import android.app.Activity

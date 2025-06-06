@@ -1,7 +1,7 @@
 package com.frame.base
 
 import androidx.multidex.MultiDexApplication
-import com.frame.base.widget.ActivityLifecycleCallback
+import com.frame.base.ext.ActivityLifecycleCallback
 
 
 /**

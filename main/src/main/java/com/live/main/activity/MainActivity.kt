@@ -5,20 +5,16 @@ import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.frame.base.ui.BaseVBActivity
-import com.frame.base.widget.MyViewPagerAdapter
 
 import com.frame.common.constant.ARouterPath
 import com.frame.common.constant.Constants
 import com.frame.common.ext.getStringArrayExt
 import com.frame.common.ext.getStringExt
 import com.james.main.databinding.ActivityMainBinding
-import com.live.main.R
-import com.live.main.databinding.ActivityMainBinding
 import com.live.main.vm.MainVM
-import com.lxj.xpopup.enums.PopupAnimation
 import com.tools.logger.logA
 import com.tools.toast.ext.toastShort
-import com.frame.res.R as Rs
+import com.main.res.R as Rs
 
 
 @Route(path = ARouterPath.Main.MAIN)
@@ -108,16 +104,6 @@ class MainActivity : BaseVBActivity<MainVM, ActivityMainBinding>() {
         })
     }
 
-    /**
-     * 1v1 呼叫弹框
-     */
-    private fun initCallMeDialog() {
-        val dialog = customDialog(HomeCallMeDialog(this))
-        dialog.hasShadowBg(false)
-        dialog.popupAnimation(PopupAnimation.TranslateFromTop)
-        dialog.offsetY(BarUtils.getStatusBarHeight())
-        dialog.isCenterHorizontal(true)
-    }
 
     override fun onRequestSuccess() {
         LiveEventBus.get("logout", Boolean::class.java).observe(this) {

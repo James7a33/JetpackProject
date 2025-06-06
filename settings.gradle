@@ -75,7 +75,7 @@ include ':tools:t_permission'
 //dialog
 include ':tools:t_dialog'
 
-
 //业务
 include ':business:b_bean'
 include ':business:b_common'
+include ':t_dialog1'

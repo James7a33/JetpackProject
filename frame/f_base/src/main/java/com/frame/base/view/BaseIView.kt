@@ -8,15 +8,30 @@ import com.kingja.loadsir.callback.Callback
 /**
  * @Author: james
  * @Date: 2023/7/25 18:58
- * @Description: 自定义view
+ * @Description: view 基础接口
  */
 interface BaseIView {
+
+    /**
+     * 是否显示 titleBar
+     */
+    fun isTitleBarShow(): Boolean {
+        return true
+    }
 
     /**
      * 子类可传入需要被包裹的View，做状态显示-空、错误、加载
      * 如果子类不覆盖该方法 那么会将整个当前Activity(toolbar头部除外)/Fragment界面都当做View包裹
      */
     fun getLoadingView(): View? {
+        return null
+    }
+
+    /**
+     * 子类可传入自己的标题栏 不给默认是null
+     * @return View?
+     */
+    fun getTitleBarView(): View? {
         return null
     }
 

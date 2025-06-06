@@ -13,9 +13,9 @@ import com.frame.base.R
 import com.frame.base.ext.createViewModel
 import com.frame.base.loading.LoadStatusEntity
 import com.frame.base.loading.LoadingType
-import com.frame.base.loadsir.BaseEmptyCallback
-import com.frame.base.loadsir.BaseErrorCallback
-import com.frame.base.loadsir.BaseLoadingCallback
+import com.frame.base.loadsir.base.BaseEmptyCallback
+import com.frame.base.loadsir.base.BaseErrorCallback
+import com.frame.base.loadsir.base.BaseLoadingCallback
 import com.frame.base.view.BaseIView
 import com.frame.base.vm.BaseViewModel
 import com.kingja.loadsir.callback.Callback

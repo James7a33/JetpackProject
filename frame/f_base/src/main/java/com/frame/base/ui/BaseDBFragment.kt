@@ -17,14 +17,21 @@ import com.frame.base.vm.BaseViewModel
 abstract class BaseDBFragment<VM : BaseViewModel, DB : ViewDataBinding> : BaseVMFragment<VM>(),
     BaseIView {
 
-    lateinit var bind: DB
+    private var _binding: DB? = null
+
+    val bind: DB get() = _binding!!
 
     /**
      * 创建 DataBinding
      */
     override fun initViewDataBind(inflater: LayoutInflater, container: ViewGroup?): View? {
-        bind = inflateBinding(inflater, container, false)
-        bind.lifecycleOwner = viewLifecycleOwner
+        _binding = inflateBinding(inflater, container, false)
+        _binding!!.lifecycleOwner = viewLifecycleOwner
         return bind.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

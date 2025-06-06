@@ -1,16 +1,16 @@
-package com.tools.db.entity
+package com.tools.db.bean
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.tools.db.DBConstants
+import com.tools.db.Constants
 
 /**
  * @Author: james
  * @Date: 2024/4/16 16:39
  * @Description:
  */
-@Entity(tableName = DBConstants.TABLE.TABLE_USER_NAME)
+@Entity(tableName = Constants.TABLE.TABLE_USER_NAME)
 class UserInfoBean {
 
     @PrimaryKey

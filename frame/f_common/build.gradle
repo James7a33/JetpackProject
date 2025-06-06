@@ -9,7 +9,7 @@ android {
 }
 
 dependencies {
-    implementation project(':frame:f_net')
+    api project(':frame:f_net')
     api project(':frame:f_base')
     api project(':tools:t_logger')
     api project(':tools:t_toast')

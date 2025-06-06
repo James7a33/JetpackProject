@@ -1,4 +1,4 @@
-package com.frame.base.loadsir
+package com.frame.base.loadsir.base
 
 import com.frame.base.R
 import com.kingja.loadsir.callback.Callback

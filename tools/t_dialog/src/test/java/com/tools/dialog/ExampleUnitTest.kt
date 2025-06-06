@@ -1,4 +1,4 @@
-package comtools.dialog
+package com.tools.dialog
 
 import org.junit.Test
 

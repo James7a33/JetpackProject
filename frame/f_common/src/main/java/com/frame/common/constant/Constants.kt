@@ -13,6 +13,9 @@ val mmAPP: MMKV by lazy(mode = LazyThreadSafetyMode.SYNCHRONIZED) {
 
 object Constants {
 
+    /**
+     * 应用层级
+     */
     object App {
         /*欢迎页*/
         const val GUIDE: String = "guide"
@@ -33,6 +36,9 @@ object Constants {
         const val CHECK_IN_WEEKLY_REMINDER = "check_in_weekly_reminder"
     }
 
+    /**
+     * 用户层级
+     */
     object User {
         //登录token
         const val LOGIN_TOKEN: String = "login_token"
@@ -49,5 +55,6 @@ object Constants {
         //是否登录
         const val IS_LOGIN: String = "is_login"
     }
+
 
 }

@@ -2,16 +2,19 @@ package com.live.main.activity
 
 import android.os.Bundle
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.business.common.ext.isLogin
 import com.frame.base.ui.BaseVBActivity
 import com.frame.base.vm.BaseViewModel
 import com.frame.base.ext.closeActivity
 import com.frame.common.constant.ARouterPath
 import com.frame.common.ext.countDown
+import com.frame.common.ext.countdownTimerUtils
 import com.frame.common.ext.getStringExt
 import com.frame.common.ext.setOnclick
 import com.frame.common.ext.toStartActivity
 import com.gyf.immersionbar.ImmersionBar
 import com.james.main.databinding.ActivitySplashBinding
+import com.main.res.R as Rs
 
 /**
  * @Author: james

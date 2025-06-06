@@ -1,24 +1,33 @@
 package com.frame.base.ui
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
 import android.widget.FrameLayout
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.frame.base.R
+import com.frame.base.databinding.LayoutTitleBarBinding
+import com.frame.base.ext.closeActivity
 import com.frame.base.ext.createViewModel
 import com.frame.base.loading.LoadStatusEntity
+import com.frame.base.loading.LoadingDialogEntity
 import com.frame.base.loading.LoadingType
-import com.frame.base.loadsir.BaseEmptyCallback
-import com.frame.base.loadsir.BaseErrorCallback
-import com.frame.base.loadsir.BaseLoadingCallback
+import com.frame.base.loadsir.base.BaseEmptyCallback
+import com.frame.base.loadsir.base.BaseErrorCallback
+import com.frame.base.loadsir.base.BaseLoadingCallback
 import com.frame.base.view.BaseIView
 import com.frame.base.vm.BaseViewModel
+import com.hjq.bar.OnTitleBarListener
+import com.hjq.bar.TitleBar
 import com.kingja.loadsir.callback.Callback
 import com.kingja.loadsir.callback.SuccessCallback
 import com.kingja.loadsir.core.LoadService
 import com.kingja.loadsir.core.LoadSir
+import com.noober.background.BackgroundLibrary
+import com.tools.dialog.dismissLoadingExt
+import com.tools.dialog.showLoadingExt
 import com.tools.toast.ext.toastLong
 
 /**
@@ -26,7 +35,8 @@ import com.tools.toast.ext.toastLong
  * @Date: 2023/7/25 18:58
  * @Description: ViewModel BaseActivity
  */
-abstract class BaseVMActivity<VM : BaseViewModel> : AppCompatActivity(), BaseIView {
+abstract class BaseVMActivity<VM : BaseViewModel> : AppCompatActivity(), BaseIView,
+    OnTitleBarListener {
 
     val TAG: String = this.javaClass.simpleName
 
@@ -35,6 +45,8 @@ abstract class BaseVMActivity<VM : BaseViewModel> : AppCompatActivity(), BaseIVi
 
     //当前Activity绑定的 ViewModel
     lateinit var vm: VM
+
+    lateinit var titleBarBind: LayoutTitleBarBinding
 
     private var dataBindView: View? = null
 
@@ -45,6 +57,7 @@ abstract class BaseVMActivity<VM : BaseViewModel> : AppCompatActivity(), BaseIVi
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        BackgroundLibrary.inject(this)
         setContentView(R.layout.activity_base)
         //生成ViewModel
         vm = createViewModel()
@@ -62,6 +75,14 @@ abstract class BaseVMActivity<VM : BaseViewModel> : AppCompatActivity(), BaseIVi
     private fun initUiStatusManger() {
         baseRootView = findViewById(R.id.baseRootView)
         baseContentView = findViewById(R.id.baseContentView)
+        //添加 titleBar
+        if (isTitleBarShow()) {
+            baseRootView.addView(
+                if (getTitleBarView() == null) initTitleBar() else getTitleBarView()!!,
+                0
+            )
+        }
+
         //添加 布局内容
         dataBindView = initViewDataBind()!!
         baseContentView.addView(dataBindView)
@@ -89,6 +110,50 @@ abstract class BaseVMActivity<VM : BaseViewModel> : AppCompatActivity(), BaseIVi
                     }
             }
     }
+
+    /**
+     * 默认的 titleBar
+     */
+    private fun initTitleBar(): View {
+        titleBarBind = LayoutTitleBarBinding.inflate(LayoutInflater.from(this))
+        titleBarBind.titleBar.apply {
+            title = titleBar()
+            setOnTitleBarListener(this@BaseVMActivity)
+        }
+        return titleBarBind.root
+    }
+
+    /**
+     * titleBar
+     * 标题点击事件
+     * @param titleBar
+     */
+    override fun onTitleClick(titleBar: TitleBar) {
+
+    }
+
+    /**
+     * titleBar
+     * 左标题点击事件
+     * @param titleBar
+     */
+    override fun onLeftClick(titleBar: TitleBar) {
+        closeActivity(this@BaseVMActivity)
+    }
+
+    /**
+     * titleBar
+     * 右标题点击事件
+     * @param titleBar
+     */
+    override fun onRightClick(titleBar: TitleBar) {
+
+    }
+
+    /**
+     * 设置titleBar
+     */
+    abstract fun titleBar(): String
 
     /**
      * 初始化view 这个方法会有延迟，因为使用了LoadSir，需要等待LoadSir注册完成后才能执行
@@ -238,6 +303,37 @@ abstract class BaseVMActivity<VM : BaseViewModel> : AppCompatActivity(), BaseIVi
     }
 
     /**
+     * 显示自定义loading 在请求时 设置 loadingType类型为LOADING_CUSTOM 时才有效 可以根据setting中的requestCode判断
+     * 具体是哪个请求显示该请求自定义的loading
+     * @param setting LoadingDialogEntity
+     */
+    override fun showCustomLoading(setting: LoadingDialogEntity) {
+        showLoadingExt(setting.loadingMessage)
+    }
+
+    /**
+     * 隐藏自定义loading 在请求时 设置 loadingType类型为LOADING_CUSTOM 时才有效 可以根据setting中的requestCode判断
+     * 具体是哪个请求隐藏该请求自定义的loading
+     * @param setting LoadingDialogEntity
+     */
+    override fun dismissCustomLoading(setting: LoadingDialogEntity) {
+        dismissLoadingExt()
+    }
+
+    override fun showLoading(setting: LoadingDialogEntity) {
+        showLoadingExt(setting.loadingMessage)
+    }
+
+    override fun dismissLoading(setting: LoadingDialogEntity) {
+        dismissLoadingExt()
+    }
+
+    override fun finish() {
+        dismissLoadingExt()
+        super.finish()
+    }
+
+    /**
      * 供子类BaseVmDbActivity 初始化 DataBinding ViewBinding操作
      */
     open fun initViewDataBind(): View? {
@@ -250,10 +346,7 @@ abstract class BaseVMActivity<VM : BaseViewModel> : AppCompatActivity(), BaseIVi
      * @return
      */
     override fun getEmptyStateLayout(): Callback? = null
-
     override fun getErrorStateLayout(): Callback? = null
-
     override fun getLoadingStateLayout(): Callback? = null
-
     override fun getCustomStateLayout(): List<Callback>? = null
 }

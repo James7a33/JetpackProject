@@ -6,9 +6,9 @@ import com.effective.android.anchors.task.TaskCreator
 import com.effective.android.anchors.task.project.Project
 import com.frame.base.BuildConfig
 import com.frame.base.appContext
-import com.frame.base.loadsir.BaseEmptyCallback
-import com.frame.base.loadsir.BaseErrorCallback
-import com.frame.base.loadsir.BaseLoadingCallback
+import com.frame.base.loadsir.base.BaseEmptyCallback
+import com.frame.base.loadsir.base.BaseErrorCallback
+import com.frame.base.loadsir.base.BaseLoadingCallback
 import com.frame.net.client.NetHttpClient
 import com.kingja.loadsir.callback.SuccessCallback
 import com.kingja.loadsir.core.LoadSir

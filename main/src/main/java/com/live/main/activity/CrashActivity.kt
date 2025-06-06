@@ -14,11 +14,12 @@ import com.frame.base.ui.BaseVBActivity
 import com.frame.base.vm.BaseViewModel
 import com.frame.common.ext.setOnclick
 import com.james.main.databinding.ActivityCrashErrorBinding
+import com.tools.toast.ext.toastShort
+import com.main.res.R as Rs
 
 
 /**
- * @Author: james
- * @Date: 2024/4/7 16:03
+ * @Author: james * @Date: 2024/4/7 16:03
  * @Description:
  */
 class CrashActivity : BaseVBActivity<BaseViewModel, ActivityCrashErrorBinding>() {
@@ -49,7 +50,7 @@ class CrashActivity : BaseVBActivity<BaseViewModel, ActivityCrashErrorBinding>()
                 bind.errorActivityRestartButton -> {
                     val isRestart =
                         config!!.isShowRestartButton && config!!.restartActivityClass != null
-                    bind.errorActivityRestartButton.setText(if (isRestart) Res.string.error_activity_restart_app else Res.string.error_activity_close_app)
+                    bind.errorActivityRestartButton.setText(if (isRestart) Rs.string.error_activity_restart_app else Rs.string.error_activity_close_app)
                     if (isRestart) CustomActivityOnCrash.restartApplication(
                         this@CrashActivity,
                         config!!
@@ -58,7 +59,7 @@ class CrashActivity : BaseVBActivity<BaseViewModel, ActivityCrashErrorBinding>()
 
                 bind.errorActivityMoreInfoButton -> {
                     val dialog = AlertDialog.Builder(this@CrashActivity)
-                        .setTitle(Res.string.error_activity_error_details_title)
+                        .setTitle(Rs.string.error_activity_error_details_title)
                         .setMessage(
                             CustomActivityOnCrash.getAllErrorDetailsFromIntent(
                                 this@CrashActivity,
@@ -66,20 +67,21 @@ class CrashActivity : BaseVBActivity<BaseViewModel, ActivityCrashErrorBinding>()
                             )
                         )
                         .setPositiveButton(
-                            Res.string.error_activity_error_details_close,
+                            Rs.string.error_activity_error_details_close,
                             null
                         )
                         .setNeutralButton(
-                            Res.string.error_activity_error_details_copy
+                            Rs.string.error_activity_error_details_copy
                         ) { _: DialogInterface?, _: Int ->
                             copyErrorToClipboard()
-                            ToastUtils.showLong(Res.string.error_activity_error_details_copy)
+                            Rs.string.error_activity_error_details_copy.toastShort()
+
                         }
                         .show()
                     val textView = dialog.findViewById<View>(android.R.id.message) as TextView
                     textView.setTextSize(
                         TypedValue.COMPLEX_UNIT_PX,
-                        resources.getDimension(Res.dimen.sp_14)
+                        resources.getDimension(Rs.dimen.sp_14)
                     )
                 }
             }
@@ -91,7 +93,7 @@ class CrashActivity : BaseVBActivity<BaseViewModel, ActivityCrashErrorBinding>()
             CustomActivityOnCrash.getAllErrorDetailsFromIntent(this@CrashActivity, intent)
         val clipboard = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
         val clip = ClipData.newPlainText(
-            getString(Res.string.error_activity_error_details_clipboard_label),
+            getString(Rs.string.error_activity_error_details_clipboard_label),
             errorInformation
         )
         clipboard.setPrimaryClip(clip)

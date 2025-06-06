@@ -7,6 +7,7 @@ import android.view.View
 import android.view.animation.DecelerateInterpolator
 import androidx.core.content.ContextCompat
 import androidx.viewpager2.widget.ViewPager2
+import com.business.common.ext.isLogin
 import com.frame.base.ext.closeActivity
 import com.frame.base.ui.BaseVBActivity
 import com.frame.common.constant.ARouterPath
@@ -21,7 +22,7 @@ import com.live.main.adapter.GuideAdapter
 import com.live.main.vm.GuideVm
 import com.tools.logger.logA
 import com.zhpan.indicator.enums.IndicatorSlideMode
-import com.james.res.R as Rs
+import com.main.res.R as Rs
 
 /**
  * @Author: james
@@ -59,7 +60,7 @@ class GuideActivity : BaseVBActivity<GuideVm, ActivityGuideBinding>() {
 //            setPageTransformer(
 //                PageTransformerFactory.createPageTransformer(transforms[Random().nextInt(7)])
 //            )
-            setIndicatorMargin(0, 0, 0, resources.getDimensionPixelOffset(ResR.dimen.dp_80))
+            setIndicatorMargin(0, 0, 0, resources.getDimensionPixelOffset(Rs.dimen.dp_80))
             setIndicatorSliderGap(resources.getDimension(Rs.dimen.dp_10).toInt())
             setIndicatorSlideMode(IndicatorSlideMode.SMOOTH)
             setIndicatorSliderRadius(

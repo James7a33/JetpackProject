@@ -5,7 +5,7 @@ package com.tools.db
  * Created: 2024/8/19 16:49
  * Description: 数据库名称
  */
-object DBConstants {
+object Constants {
 
     const val DB_NAME = "project_db"
 

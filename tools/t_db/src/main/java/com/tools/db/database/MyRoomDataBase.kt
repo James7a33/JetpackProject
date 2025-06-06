@@ -3,10 +3,10 @@ package com.tools.db.database
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.frame.framework.BaseApp
-import com.tools.db.DBConstants
+import com.frame.base.BaseApp
+import com.tools.db.Constants
 import com.tools.db.dao.UserInfoDao
-import com.tools.db.entity.UserInfoBean
+import com.tools.db.bean.UserInfoBean
 
 /**
  * @Author: james
@@ -33,7 +33,7 @@ abstract class MyRoomDataBase : RoomDatabase() {
             return dataBase ?: Room.databaseBuilder(
                 BaseApp.getInstance(),
                 MyRoomDataBase::class.java,
-                DBConstants.DB_NAME
+                Constants.DB_NAME
             )
                 //是否允许在主线程查询，默认是false
                 .allowMainThreadQueries()

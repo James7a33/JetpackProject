@@ -10,6 +10,7 @@ android {
 
 dependencies {
     implementation project(":tools:t_logger")
+    implementation project(":frame:f_common")
     implementation libs.room.ktx
     ksp libs.room.compiler
 }
