@@ -1,4 +1,4 @@
-package com.live.main.activity
+package com.project.main.activity
 
 import android.os.Bundle
 import com.alibaba.android.arouter.facade.annotation.Route
@@ -7,13 +7,16 @@ import com.frame.base.ui.BaseVBActivity
 import com.frame.base.vm.BaseViewModel
 import com.frame.base.ext.closeActivity
 import com.frame.common.constant.ARouterPath
+import com.frame.common.constant.Constants
+import com.frame.common.constant.mmAPP
 import com.frame.common.ext.countDown
 import com.frame.common.ext.countdownTimerUtils
 import com.frame.common.ext.getStringExt
 import com.frame.common.ext.setOnclick
 import com.frame.common.ext.toStartActivity
 import com.gyf.immersionbar.ImmersionBar
-import com.james.main.databinding.ActivitySplashBinding
+import com.project.main.databinding.ActivitySplashBinding
+import kotlin.random.Random
 import com.main.res.R as Rs
 
 /**
@@ -38,19 +41,19 @@ class SplashActivity : BaseVBActivity<BaseViewModel, ActivitySplashBinding>() {
     }
 
     override fun initView(savedInstanceState: Bundle?) {
-//        无欢迎页
-//        val isGuide = mmAPP.decodeBool(Constants.App.GUIDE)
-//        if (isGuide) {
-//            val randomNumber = Random.nextInt(1, 101)
-//            if (randomNumber % 2 == 0) {
-        initCountDown()
-//            } else {
-//                toMainActivity()
-//            }
-//        } else {
-//            toStartActivity(GuideActivity::class.java)
-//            closeActivity(this)
-//        }
+        //无欢迎页
+        val isGuide = mmAPP.decodeBool(Constants.App.GUIDE)
+        if (isGuide) {
+            val randomNumber = Random.nextInt(1, 101)
+            if (randomNumber % 2 == 0) {
+                initCountDown()
+            } else {
+                toMainActivity()
+            }
+        } else {
+            toStartActivity(GuideActivity::class.java)
+            closeActivity(this)
+        }
     }
 
     /**

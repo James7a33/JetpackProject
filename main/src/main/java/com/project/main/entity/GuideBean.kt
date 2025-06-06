@@ -1,4 +1,4 @@
-package com.live.main.entity
+package com.project.main.entity
 
 /**
  * @Author: james

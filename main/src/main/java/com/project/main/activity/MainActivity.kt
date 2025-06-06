@@ -1,19 +1,16 @@
-package com.live.main.activity
+package com.project.main.activity
 
 import android.os.Bundle
 import androidx.activity.OnBackPressedCallback
-import androidx.fragment.app.Fragment
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.frame.base.ui.BaseVBActivity
 
 import com.frame.common.constant.ARouterPath
 import com.frame.common.constant.Constants
-import com.frame.common.ext.getStringArrayExt
 import com.frame.common.ext.getStringExt
-import com.james.main.R
-import com.james.main.databinding.ActivityMainBinding
-import com.live.main.vm.MainVM
-import com.tools.logger.logA
+import com.project.main.R
+import com.project.main.databinding.ActivityMainBinding
+import com.project.main.vm.MainVM
 import com.tools.toast.ext.toastShort
 import com.main.res.R as Rs
 
@@ -23,7 +20,6 @@ class MainActivity : BaseVBActivity<MainVM, ActivityMainBinding>() {
 
     //退出时间
     private var lastPressTime: Long = 0
-
 
     //icon
     private var mIconNorIds = intArrayOf(

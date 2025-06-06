@@ -1,4 +1,4 @@
-package com.live.main.activity
+package com.project.main.activity
 
 import android.app.AlertDialog
 import android.content.ClipData

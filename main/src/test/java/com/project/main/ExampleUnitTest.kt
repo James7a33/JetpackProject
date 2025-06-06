@@ -1,4 +1,4 @@
-package com.live.main
+package com.project.main
 
 import org.junit.Test
 

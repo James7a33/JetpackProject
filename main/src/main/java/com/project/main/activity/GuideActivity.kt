@@ -1,4 +1,4 @@
-package com.live.main.activity
+package com.project.main.activity
 
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
@@ -18,8 +18,8 @@ import com.frame.common.ext.setOnclick
 import com.frame.common.ext.toStartActivity
 import com.gyf.immersionbar.ImmersionBar
 import com.james.main.databinding.ActivityGuideBinding
-import com.live.main.adapter.GuideAdapter
-import com.live.main.vm.GuideVm
+import com.project.main.adapter.GuideAdapter
+import com.project.main.vm.GuideVm
 import com.tools.logger.logA
 import com.zhpan.indicator.enums.IndicatorSlideMode
 import com.main.res.R as Rs

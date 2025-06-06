@@ -1,9 +1,9 @@
-package com.live.main
+package com.project.main
 
 import cat.ereza.customactivityoncrash.config.CaocConfig
 import com.frame.common.CommonApp
-import com.live.main.activity.CrashActivity
-import com.live.main.activity.SplashActivity
+import com.project.main.activity.CrashActivity
+import com.project.main.activity.SplashActivity
 
 /**
  * Author: james

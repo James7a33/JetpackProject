@@ -117,7 +117,7 @@
 
         <!--启动页-->
         <activity
-            android:name="com.live.main.activity.SplashActivity"
+            android:name="com.project.main.activity.SplashActivity"
             android:exported="true"
             android:theme="@style/AppSplash">
 

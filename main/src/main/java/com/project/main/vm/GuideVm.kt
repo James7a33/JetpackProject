@@ -1,11 +1,11 @@
-package com.live.main.vm
+package com.project.main.vm
 
 import android.annotation.SuppressLint
 import androidx.lifecycle.MutableLiveData
 import com.frame.base.appContext
 import com.frame.base.ext.currentActivity
 import com.frame.base.vm.BaseViewModel
-import com.live.main.entity.GuideBean
+import com.project.main.entity.GuideBean
 import com.frame.common.ext.getStringArrayExt
 import java.util.ArrayList
 import com.main.res.R as Rs

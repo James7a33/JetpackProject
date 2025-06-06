@@ -1,4 +1,4 @@
-package com.live.main.vm
+package com.project.main.vm
 
 import com.frame.base.vm.BaseViewModel
 

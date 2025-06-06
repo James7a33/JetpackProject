@@ -1,7 +1,7 @@
-package com.live.main.adapter
+package com.project.main.adapter
 
 import com.james.main.R
-import com.live.main.entity.GuideBean
+import com.project.main.entity.GuideBean
 import com.zhpan.bannerview.BaseBannerAdapter
 import com.zhpan.bannerview.BaseViewHolder
 

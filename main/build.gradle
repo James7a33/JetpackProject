@@ -5,7 +5,7 @@ plugins {
 apply from: '../common.gradle'
 
 android {
-    namespace 'com.james.main'
+    namespace 'com.project.main'
 }
 
 dependencies {

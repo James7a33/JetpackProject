@@ -27,26 +27,13 @@ object ARouterPath {
     object Login {
         //登录页
         const val LOGIN = "/login/activity/LoginActivity"
-
     }
 
     object Mine {
-        //登录页
-        const val SETTING = "/mine/activity/SettingActivity"
-        const val VERIFIED = "/mine/activity/VerifiedActivity"
-        const val PERSONAL = "/mine/activity/PersonalInfoActivity"
-        const val EDITOR = "/mine/activity/PersonalEditInfomationActivity"
-        const val WALLET = "/mine/activity/PersonalWalletActivity"
-        const val VISITOR = "/mine/activity/PersonalVisitorActivity"
-        const val FANS = "/mine/activity/PersonalFansActivity"
-        const val FOLLOW = "/mine/activity/PersonalFollowActivity"
+
     }
 
     object Room {
-        //语音直播
-        const val VOICE_LIVE_ROOM = "/room/activity/LiveRoomVoiceActivity"
 
-        //视频直播
-        const val VIDEO_LIVE_ROOM = "/room/activity/LiveRoomVideoActivity"
     }
 }

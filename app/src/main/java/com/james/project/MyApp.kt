@@ -1,6 +1,6 @@
 package com.james.project
 
-import com.live.main.MainApp
+import com.project.main.MainApp
 
 /**
  * Author: James
