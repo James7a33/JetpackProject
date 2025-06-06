@@ -58,7 +58,7 @@ class SplashActivity : BaseVBActivity<BaseViewModel, ActivitySplashBinding>() {
      */
     private fun initCountDown() {
         countDown(countDownTimer, isSecond = true, onTick = { seconds ->
-            bind.tvSkip.text = getStringExt(Rs.string.splash_skip_s, seconds)
+            bind.tvSkip.text = getStringExt(Rs.string.splash_skip_second, seconds)
             if (seconds == 1L) {
                 countdownTimerUtils.cancelCountdown()
                 toMainActivity()

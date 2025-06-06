@@ -39,7 +39,7 @@ class GuideVm : BaseViewModel() {
 
         }
         val guideList = mutableListOf<GuideBean>()
-        val homeTab = getStringArrayExt(Rs.array.main_tab_array)
+        val homeTab = getStringArrayExt(Rs.array.guide_desc_array)
         mDrawableList.forEachIndexed { index, i ->
             guideList.add(GuideBean(i, homeTab[index]))
         }

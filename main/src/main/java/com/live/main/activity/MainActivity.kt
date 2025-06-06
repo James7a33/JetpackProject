@@ -10,6 +10,7 @@ import com.frame.common.constant.ARouterPath
 import com.frame.common.constant.Constants
 import com.frame.common.ext.getStringArrayExt
 import com.frame.common.ext.getStringExt
+import com.james.main.R
 import com.james.main.databinding.ActivityMainBinding
 import com.live.main.vm.MainVM
 import com.tools.logger.logA
@@ -23,14 +24,6 @@ class MainActivity : BaseVBActivity<MainVM, ActivityMainBinding>() {
     //退出时间
     private var lastPressTime: Long = 0
 
-    //标题
-    private var mTitles = getStringArrayExt(Rs.array.main_tab_array)
-
-    //fragment
-    private val mFragments = mutableListOf<Fragment>()
-
-    //tab 实体类
-    private var mTabEntities = ArrayList<CustomTabEntity>()
 
     //icon
     private var mIconNorIds = intArrayOf(
@@ -52,39 +45,7 @@ class MainActivity : BaseVBActivity<MainVM, ActivityMainBinding>() {
     override fun isTitleBarShow(): Boolean = false
 
     override fun initView(savedInstanceState: Bundle?) {
-        initViewPager()
         onBackPress()
-        initCallMeDialog()
-    }
-
-    private fun initViewPager() {
-        mFragments.add(HomeFragment())
-        mFragments.add(DynamicFragment())
-        mFragments.add(MessageFragment())
-        mFragments.add(MineFragment())
-        mFragments.forEachIndexed { index, _ ->
-            mTabEntities.add(TabEntity(mTitles[index], mIconPreIds[index], mIconNorIds[index]))
-        }
-        bind.commonTabLayout.apply {
-            setTabData(mTabEntities)
-            setOnTabSelectListener(object : OnTabSelectListener {
-                override fun onTabSelect(position: Int) {
-                    bind.viewPager.currentItem = position
-                }
-
-                override fun onTabReselect(position: Int) {
-                    "onTabReselect$position".logA("main")
-                }
-            })
-        }
-
-        bind.viewPager.apply {
-            setCanScroll(false)
-            adapter =
-                MyViewPagerAdapter(supportFragmentManager, mFragments, mTitles.toMutableList())
-            offscreenPageLimit = mFragments.size
-            currentItem = 0
-        }
     }
 
     private fun onBackPress() {
@@ -104,11 +65,4 @@ class MainActivity : BaseVBActivity<MainVM, ActivityMainBinding>() {
         })
     }
 
-
-    override fun onRequestSuccess() {
-        LiveEventBus.get("logout", Boolean::class.java).observe(this) {
-            logout()
-            IMChatUtils.getInstance().logout()
-        }
-    }
 }

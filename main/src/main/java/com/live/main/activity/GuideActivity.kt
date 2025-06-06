@@ -82,7 +82,7 @@ class GuideActivity : BaseVBActivity<GuideVm, ActivityGuideBinding>() {
     }
 
     private fun updateUI(position: Int) {
-        bind.tvDescribe.text = getStringArrayExt(Rs.array.main_tab_array)[position]
+        bind.tvDescribe.text = getStringArrayExt(Rs.array.guide_desc_array)[position]
         val translationAnim = ObjectAnimator.ofFloat(bind.tvDescribe, "translationX", -120f, 0f)
         translationAnim.apply {
             duration = ANIMATION_DURATION.toLong()

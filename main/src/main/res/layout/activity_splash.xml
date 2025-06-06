@@ -52,39 +52,4 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/icSplashLauncher" />
 
-
-    <ImageView
-        android:id="@+id/icSplashLauncherBtm"
-        android:layout_width="@dimen/dp_36"
-        android:layout_height="@dimen/dp_36"
-        android:src="@mipmap/ic_splash_icon"
-        android:layout_marginBottom="@dimen/dp_10"
-        app:layout_constraintBottom_toTopOf="@+id/tvSplashTips"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/ivSplashMusicBtm" />
-
-    <ImageView
-        android:id="@+id/ivSplashMusicBtm"
-        android:layout_width="@dimen/dp_50"
-        android:layout_height="@dimen/dp_29"
-        android:layout_marginStart="@dimen/dp_10"
-        android:src="@mipmap/ic_splash_music"
-        app:layout_constraintBottom_toBottomOf="@+id/icSplashLauncherBtm"
-        app:layout_constraintLeft_toRightOf="@+id/icSplashLauncherBtm"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/icSplashLauncherBtm" />
-
-    <TextView
-        android:id="@+id/tvSplashTips"
-        style="@style/tv_color_1_14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/dp_30"
-        android:text="@string/splash_tip"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -24,6 +24,7 @@ banner2 = "2.2.3"
 
 #tablaout
 flycoTabLayout = "3.0.0"
+tabLayout = "3.7.1"
 
 #视频播放器
 gsyVideoPlayer = "v8.4.0-release-jitpack"
@@ -176,6 +177,9 @@ immersionbarKtx = { group = "com.geyifeng.immersionbar", name = "immersionbar-kt
 
 #Tablayout
 flycoTabLayout = { group = "io.github.h07000223", name = "flycoTabLayout", version.ref = "flycoTabLayout" }
+tabLayout = {group = "com.github.angcyo.DslTablayout",name = "TabLayout" ,version.ref = "tabLayout"}
+tabLayout-ViewPager1Delegate = {group = "com.github.angcyo.DslTablayout",name = "ViewPager1Delegate" ,version.ref = "tabLayout"}
+tabLayout-ViewPager2Delegate = {group = "com.github.angcyo.DslTablayout",name = "ViewPager2Delegate" ,version.ref = "tabLayout"}
 
 #日志
 timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }

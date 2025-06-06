@@ -11,4 +11,9 @@ android {
 dependencies {
     api project(':business:b_bean')
     api project(':tools:t_db')
+
+    //tabLayout
+    config.tabLayout
+    config.tabLayout.viewPager1Delegate
+    config.tabLayout.viewPager2Delegate
 }
