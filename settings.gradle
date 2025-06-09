@@ -44,7 +44,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "JamesMvvm"
+rootProject.name = "JetpackProject"
 include ':app'
 include ':main'
 include ':res'
@@ -78,4 +78,4 @@ include ':tools:t_dialog'
 //业务
 include ':business:b_bean'
 include ':business:b_common'
-include ':t_dialog1'
+
