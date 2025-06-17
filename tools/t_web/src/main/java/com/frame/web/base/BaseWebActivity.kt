@@ -11,6 +11,12 @@ import androidx.annotation.ColorInt
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModelProvider
+import com.frame.base.databinding.LayoutTitleBarBinding
+import com.frame.base.ext.closeActivity
+import com.frame.base.vm.BaseViewModel
+import com.frame.base.ext.inflateBinding
+import com.frame.base.ext.getVmClazz
+import com.frame.common.ext.getColorExt
 import com.gyf.immersionbar.ImmersionBar
 import com.hjq.bar.OnTitleBarListener
 import com.hjq.bar.TitleBar
@@ -25,17 +31,10 @@ import com.just.agentweb.MiddlewareWebClientBase
 import com.just.agentweb.PermissionInterceptor
 import com.just.agentweb.WebChromeClient
 import com.just.agentweb.WebViewClient
-import com.frame.common.constant.IntentKey
-import com.frame.common.ext.getColorExt
 
-import com.frame.framework.base.vm.BaseViewModel
-import com.frame.framework.databinding.LayoutTitleBarBinding
-import com.frame.framework.ext.closeActivity
-import com.frame.framework.ext.getVmClazz
-import com.frame.framework.ext.inflateBinding
-import com.frame.framework.R
+
 import com.tools.web.databinding.ActivityBaseWebBinding
-import com.frame.res.R as Rs
+import com.main.res.R as Rs
 
 /**
  * @Author: james
@@ -83,7 +82,7 @@ abstract class BaseWebActivity<VM : BaseViewModel, DB : ViewDataBinding> : AppCo
         super.onCreate(savedInstanceState)
         setContentView(baseBind.root)
         intent?.let {
-            webUrl = it.getStringExtra(IntentKey.Web.BROWSER_KEY_URL) ?: "Https://www.baidu.com"
+            webUrl = it.getStringExtra("url") ?: "Https://www.baidu.com"
         }
         //生成ViewModel
         vm = ViewModelProvider(this)[getVmClazz(this)]
@@ -186,7 +185,7 @@ abstract class BaseWebActivity<VM : BaseViewModel, DB : ViewDataBinding> : AppCo
     }
 
     private fun getErrorLayoutEntity(): View =
-        mErrorView ?: LayoutInflater.from(this).inflate(R.layout.layout_base_empty, null)
+        mErrorView ?: LayoutInflater.from(this).inflate(com.frame.base.R.layout.layout_base_empty, null)
 
     protected open fun setErrorLayoutEntity(view: View) {
         this.mErrorView = view

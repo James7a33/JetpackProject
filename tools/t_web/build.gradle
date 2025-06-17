@@ -9,7 +9,8 @@ android {
 }
 
 dependencies {
-//    implementation project(":frame:f_base")
+    implementation project(":frame:f_common")
+    implementation project(':res')
 
     implementation config.agentWeb
 }

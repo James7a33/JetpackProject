@@ -32,9 +32,9 @@ dependencyResolutionManagement {
         mavenCentral()
 
         //jar aar 依赖 统一处理
-//        flatDir {
-//            dirs "$rootDir/business/b_login/libs"
-//        }
+        flatDir {
+            dirs "$rootDir/business/b_login/libs"
+        }
     }
 
     versionCatalogs {
@@ -58,8 +58,7 @@ include ':frame:f_common'
 
 //数据库
 include ':tools:t_db'
-//浏览器
-include ':tools:t_web'
+
 //蓝牙
 include ':tools:t_blue'
 //加载图片
@@ -74,8 +73,11 @@ include ':tools:t_toast'
 include ':tools:t_permission'
 //dialog
 include ':tools:t_dialog'
+//webview
+include ':tools:t_web'
 
 //业务
 include ':business:b_bean'
 include ':business:b_common'
+
 

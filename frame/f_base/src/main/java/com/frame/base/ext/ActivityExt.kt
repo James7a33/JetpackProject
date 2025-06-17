@@ -1,5 +1,6 @@
 package com.frame.base.ext
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import java.util.LinkedList
 
@@ -59,6 +60,7 @@ fun closeActivity(cls: Class<*>) {
 /**
  * 关闭所有的Activity 全部出栈
  */
+@SuppressLint("SuspiciousIndentation")
 fun closeAllActivity() {
     val iterator= activityList.iterator()
     while (iterator.hasNext()) {
