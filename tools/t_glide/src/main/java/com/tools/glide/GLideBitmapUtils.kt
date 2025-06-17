@@ -41,7 +41,7 @@ object GlideBitmapUtils {
         onRequestListener: OnGlideRequestListener? = null,
         callBack: (Bitmap) -> Unit
     ) {
-        if (!checkNull(this, imgUrl)) return
+       checkNull(this, imgUrl)
         loadGlideBitmap(
             context,
             imgUrl,

@@ -42,16 +42,13 @@ object GlideUtils {
      * @param img 图片控件
      * @param imgUrl 图片地址
      */
-    fun checkNull(img: ImageView?, imgUrl: Any?): Boolean {
+    fun checkNull(img: ImageView?, imgUrl: Any?) {
         if (img == null) {
-            Log.e(TAG, "GlideUtils ImageView is null")
-            return false
+            throw NullPointerException("GlideUtils ImageView is null")
         }
         if (imgUrl == null) {
-            Log.e(TAG, "GlideUtils imgUrl is null")
-            return false
+            throw NullPointerException("GlideUtils imgUrl is null")
         }
-        return true
     }
 
     /**
@@ -80,7 +77,7 @@ object GlideUtils {
         @DrawableRes errorHolderImg: Int = defErrorImg,
         onRequestListener: OnGlideRequestListener? = null
     ) {
-        if (!checkNull(this, imgUrl)) return
+        checkNull(this, imgUrl)
         loadGlide(
             this!!.context,
             imgUrl,
@@ -106,7 +103,7 @@ object GlideUtils {
         @DrawableRes errorHolderImg: Int = defErrorImg,
         onRequestListener: OnGlideRequestListener? = null
     ) {
-        if (!checkNull(this, imgUrl)) return
+       checkNull(this, imgUrl)
         loadGlide(
             this!!.context,
             imgUrl,
@@ -129,7 +126,7 @@ object GlideUtils {
         @DrawableRes errorHolderImg: Int = defErrorImg,
         onRequestListener: OnGlideRequestListener? = null
     ) {
-        if (!checkNull(this, imgUrl)) return
+       checkNull(this, imgUrl)
         loadGlide(
             this!!.context,
             imgUrl,
@@ -155,7 +152,7 @@ object GlideUtils {
         @DrawableRes errorHolderImg: Int = defErrorImg,
         onRequestListener: OnGlideRequestListener? = null
     ) {
-        if (!checkNull(this, imgUrl)) return
+       checkNull(this, imgUrl)
         loadGlide(
             this!!.context,
             imgUrl,
@@ -177,7 +174,7 @@ object GlideUtils {
         @DrawableRes errorHolderImg: Int = defErrorImg,
         onRequestListener: OnGlideRequestListener? = null
     ) {
-        if (!checkNull(this, imgUrl)) return
+       checkNull(this, imgUrl)
         val options = RequestOptions.circleCropTransform()
         loadGlide(
             this!!.context,
@@ -204,7 +201,7 @@ object GlideUtils {
         @DrawableRes errorHolderImg: Int = defErrorImg,
         onRequestListener: OnGlideRequestListener? = null
     ) {
-        if (!checkNull(this, imgUrl)) return
+       checkNull(this, imgUrl)
         loadGlide(
             this!!.context,
             imgUrl,
@@ -230,7 +227,7 @@ object GlideUtils {
         @DrawableRes errorHolderImg: Int = defErrorImg,
         onRequestListener: OnGlideRequestListener? = null
     ) {
-        if (!checkNull(this, imgUrl)) return
+       checkNull(this, imgUrl)
         loadGlide(
             this!!.context,
             imgUrl,
@@ -255,7 +252,7 @@ object GlideUtils {
         @DrawableRes errorHolderImg: Int = defErrorImg,
         onRequestListener: OnGlideRequestListener? = null
     ) {
-        if (!checkNull(this, imgUrl)) return
+       checkNull(this, imgUrl)
         val options = RequestOptions.bitmapTransform(GrayscaleTransformation())
         loadGlide(
             this!!.context,
@@ -280,7 +277,7 @@ object GlideUtils {
         options: RequestOptions,
         onRequestListener: OnGlideRequestListener? = null
     ) {
-        if (!checkNull(this, imgUrl)) return
+       checkNull(this, imgUrl)
         loadGlide(
             this!!.context,
             imgUrl,
@@ -304,7 +301,7 @@ object GlideUtils {
         transformation: BitmapTransformation,
         onRequestListener: OnGlideRequestListener? = null
     ) {
-        if (!checkNull(this, imgUrl)) return
+       checkNull(this, imgUrl)
         loadGlide(
             this!!.context,
             imgUrl,
@@ -328,7 +325,7 @@ object GlideUtils {
         @DrawableRes errorHolderImg: Int = defErrorImg,
         onRequestListener: OnGlideRequestListener? = null
     ) {
-        if (!checkNull(this, imgUrl)) return
+       checkNull(this, imgUrl)
         loadGlide(
             this!!.context,
             imgUrl,
