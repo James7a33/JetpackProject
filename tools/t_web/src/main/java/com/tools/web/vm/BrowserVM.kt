@@ -1,4 +1,4 @@
-package com.frame.web.vm
+package com.tools.web.vm
 
 import com.frame.framework.base.vm.BaseViewModel
 

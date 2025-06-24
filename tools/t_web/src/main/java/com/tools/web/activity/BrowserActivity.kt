@@ -1,11 +1,11 @@
-package com.frame.web.activity
+package com.tools.web.activity
 
 import android.os.Bundle
 import android.view.ViewGroup
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.frame.common.constant.ARouterPath
-import com.frame.web.base.BaseWebActivity
-import com.frame.web.vm.BrowserVM
+import com.tools.web.base.BaseWebActivity
+import com.tools.web.vm.BrowserVM
 import com.tools.web.databinding.ActivityBrowserBinding
 
 /**
