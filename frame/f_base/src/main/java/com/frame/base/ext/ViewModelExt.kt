@@ -17,8 +17,8 @@ import java.lang.reflect.ParameterizedType
  * 获取当前类绑定的泛型 ViewModel-clazz
  */
 @Suppress("UNCHECKED_CAST")
-fun <VM> getVmClazz(obj: Any): VM {
-    return (obj.javaClass.genericSuperclass as ParameterizedType).actualTypeArguments[0] as VM
+fun <VM> getVmClazz(obj: Any): Class<VM> {
+    return (obj.javaClass.genericSuperclass as ParameterizedType).actualTypeArguments[0] as Class<VM>
 }
 @Suppress("UNCHECKED_CAST")
 fun <DB> getDbClazz(obj: Any): DB {

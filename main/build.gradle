@@ -16,5 +16,8 @@ dependencies {
     implementation config.crash
     //banner
     implementation config.banner.zhpanvip
+
+    //ali 路由
+    kapt(config.arouter.compiler)
 }
 

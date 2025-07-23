@@ -1,40 +1,39 @@
 [versions]
-agp = "8.7.0"
+agp = "8.7.3"
 kotlin = "2.1.0"
 ksp = "2.0.21-1.0.27"
 
-coreKtx = "1.13.1"
-appcompat = "1.6.1"
-material = "1.10.0"
+coreKtx = "1.16.0"
+appcompat = "1.7.1"
+material = "1.12.0"
 multidex="2.0.1"
 junit = "4.13.2"
 androidxJunit = "1.2.1"
 junitKtx="1.2.1"
 espressoCore = "3.6.1"
 
-activityKtx = "1.8.0"
-fragmentKtx = "1.6.1"
+activityKtx = "1.10.1"
+fragmentKtx = "1.8.8"
 
 # 架构组件
-lifecycle = "2.6.2"
-navigation = "2.6.0"
+lifecycle = "2.9.2"
+navigation = "2.9.2"
 
 #协程
-coroutines = "1.7.3"
+coroutines = "1.10.1"
 
 # 数据库
-room = "2.5.1"
+room = "2.7.2"
 
 #注入
 hilt = "2.44"
 
 #Gson
-gson = "2.10.1"
+gson = "2.12.1"
 
 #View
 recycler = "1.4.0"
-constraint = "2.1.4"
-
+constraint = "2.2.1"
 
 
 # Android 官方库

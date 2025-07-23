@@ -14,7 +14,7 @@ import java.util.LinkedList
 private val activityList = LinkedList<Activity>()
 
 /*app当前显示的Activity*/
-val currentActivity: Activity? get() = if (activityList.isEmpty()) null else activityList.last
+val currentActivity: Activity? get() = if (activityList.isEmpty()) null else activityList.last()
 
 /**
  * 添加Activity入栈

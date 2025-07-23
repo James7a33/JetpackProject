@@ -9,6 +9,7 @@ import com.project.main.MainApp
  */
 class MyApp : MainApp() {
 
-
-
+    override fun onCreate() {
+        super.onCreate()
+    }
 }

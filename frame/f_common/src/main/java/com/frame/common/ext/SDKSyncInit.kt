@@ -16,6 +16,7 @@ import com.scwang.smart.refresh.footer.ClassicsFooter
 import com.scwang.smart.refresh.header.ClassicsHeader
 import com.scwang.smart.refresh.layout.SmartRefreshLayout
 import com.tencent.mmkv.MMKV
+import com.tools.toast.ToasterUtils
 import me.jessyan.autosize.AutoSizeConfig
 import rxhttp.RxHttpPlugins
 import com.main.res.R as Rs
@@ -71,6 +72,7 @@ class InitSDK : Task(TASK_ID, false) {
         }
         ARouter.init(appContext)
         MMKV.initialize(appContext)
+        ToasterUtils.getInstance().init(appContext)
     }
 }
 

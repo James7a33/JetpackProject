@@ -14,7 +14,7 @@ dependencies {
 
     api config.okhttp3
     api config.rxhttp
-    ksp config.rxhttpCompiler
+    kapt config.rxhttpCompiler
 
     implementation config.liveEventBus
 }
