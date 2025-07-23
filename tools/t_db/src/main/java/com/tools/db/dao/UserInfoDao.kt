@@ -19,34 +19,34 @@ interface UserInfoDao {
 
     /*插入*/
     @Insert(entity = UserInfoBean::class, onConflict = OnConflictStrategy.REPLACE)
-    fun insert(users: UserInfoBean?)
+    fun insert(users: UserInfoBean)
 
     /*插入 全部*/
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAll(users: MutableList<UserInfoBean>?)
+    fun insertAll(users: MutableList<UserInfoBean>)
 
     /*删除*/
-    @Query("delete from ${Constants.TABLE.TABLE_USER_NAME}")
+    @Query("DELETE FROM ${Constants.TABLE.TABLE_USER_NAME}")
     fun deleteAll()
 
     /*删除指定实体*/
     @Delete
-    fun delete(vararg persons: UserInfoBean?)
+    fun delete(vararg persons: UserInfoBean)
 
     /*根据id删除*/
-    @Query("delete from ${Constants.TABLE.TABLE_USER_NAME} where id in (:ids)")
-    fun deleteByIds(ids: Int)
+    @Query("DELETE FROM ${Constants.TABLE.TABLE_USER_NAME} WHERE id = :id")
+    fun deleteByIds(id: Int)
 
     /*修改*/
     @Update
-    fun update(users: UserInfoBean?)
+    fun update(users: UserInfoBean)
 
     /*根据Id查询*/
-    @Query("select * from ${Constants.TABLE.TABLE_USER_NAME} where id in (:ids)")
-    fun queryByIds(ids: Int): UserInfoBean
+    @Query("SELECT * FROM ${Constants.TABLE.TABLE_USER_NAME}  WHERE id = :id")
+    fun queryByIds(id: Int): UserInfoBean
 
     /*查询所有*/
-    @Query("select * from ${Constants.TABLE.TABLE_USER_NAME} order by id desc")
-    fun queryAll(): MutableList<UserInfoBean>?
+    @Query("SELECT * FROM ${Constants.TABLE.TABLE_USER_NAME} ORDER by id desc")
+    fun queryAll(): MutableList<UserInfoBean>
 
 }

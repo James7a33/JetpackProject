@@ -17,11 +17,11 @@ class UserInfoBean {
     var id: String = ""
 
     @ColumnInfo(name = "name")
-    var name: String? = null
+    var name: String = ""
 
     @ColumnInfo(name = "avatar")
-    var avatar: String? = null
+    var avatar: String = ""
 
     @ColumnInfo(name = "birthday")
-    var birthday: String? = null
+    var birthday: String = ""
 }

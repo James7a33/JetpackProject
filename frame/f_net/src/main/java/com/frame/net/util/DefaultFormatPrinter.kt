@@ -183,7 +183,7 @@ class DefaultFormatPrinter : FormatPrinter {
 
     companion object {
         private const val TAG = "HttpLog"
-        private val LINE_SEPARATOR = System.getProperty("line.separator")
+        private val LINE_SEPARATOR = System.lineSeparator()
         private val DOUBLE_SEPARATOR =
             LINE_SEPARATOR + LINE_SEPARATOR
         private val OMITTED_RESPONSE = arrayOf(
