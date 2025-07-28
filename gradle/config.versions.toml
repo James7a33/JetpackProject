@@ -1,6 +1,6 @@
 [versions]
 # 网络相关
-okhttp3 = "4.12.0"
+okhttp3 = "5.1.0"
 rxHttp = "3.3.2"
 
 #liveData
@@ -68,14 +68,14 @@ picture = "v3.11.2"
 carsh = "2.4.0"
 
 #动画播放
-lottie = "5.0.3"
+lottie = "6.6.7"
 
 #选择器
 picker = "4.1.13"
 timePicker = "0.6.3"
 
 #pdfView
-pdfView = "3.2.0-beta.1"
+pdfView = "3.2.0-beta.3"
 
 #内置更新 Apk
 xUpdate = "2.1.4"
@@ -105,7 +105,7 @@ bigMedia = "androidx-8.0.2"
 titleBar = "10.6"
 
 #下拉刷新，上拉加载
-refresh = "2.1.0"
+refresh = "2.1.1"
 
 #### 腾讯 ####
 #本地数据保存
