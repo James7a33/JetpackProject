@@ -11,7 +11,7 @@
         <item name="rightHorizontalPadding">@dimen/dp_16</item>
         <item name="leftIcon">@mipmap/ic_title_bar_back_grey</item>
         <item name="rightTitleSize">@dimen/sp_14</item>
-        <item name="rightTitleColor">@color/blue_1f2</item>
+        <item name="rightTitleColor">@color/blue</item>
     </style>
 
 </resources>

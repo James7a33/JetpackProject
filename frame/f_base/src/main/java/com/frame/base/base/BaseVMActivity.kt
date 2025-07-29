@@ -1,4 +1,4 @@
-package com.frame.base.ui
+package com.frame.base.base
 
 import android.os.Bundle
 import android.view.LayoutInflater

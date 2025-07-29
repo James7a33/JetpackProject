@@ -1,4 +1,4 @@
-package com.frame.base.ui
+package com.frame.base.base
 
 import android.content.Context
 import android.os.Bundle

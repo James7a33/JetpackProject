@@ -1,4 +1,4 @@
-package com.frame.common
+package com.business.common
 
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelStore
@@ -7,12 +7,13 @@ import com.effective.android.anchors.AnchorsManager
 import com.effective.android.anchors.task.project.Project
 import com.frame.base.BaseApp
 import com.frame.base.ext.currentProcessName
-import com.frame.common.ext.CommonTaskFactory
-import com.frame.common.ext.InitComm
-import com.frame.common.ext.InitNetWork
-import com.frame.common.ext.InitSDK
-import com.frame.common.vm.AppEventVm
-import com.frame.common.vm.AppUserVm
+import com.frame.common.BuildConfig
+import com.business.common.ext.CommonTaskFactory
+import com.business.common.ext.InitComm
+import com.business.common.ext.InitNetWork
+import com.business.common.ext.InitSDK
+import com.business.common.vm.AppEventVm
+import com.business.common.vm.AppUserVm
 import com.tools.logger.mvvmHelperLog
 
 

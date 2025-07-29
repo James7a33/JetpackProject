@@ -1,4 +1,4 @@
-package com.frame.net.base
+package com.frame.net.response
 
 /**
  * @Author: james

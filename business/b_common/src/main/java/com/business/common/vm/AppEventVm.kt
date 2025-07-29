@@ -1,4 +1,4 @@
-package com.frame.common.vm
+package com.business.common.vm
 
 import com.frame.base.vm.BaseViewModel
 

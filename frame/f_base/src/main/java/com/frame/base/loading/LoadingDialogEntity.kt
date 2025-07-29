@@ -1,7 +1,7 @@
 package com.frame.base.loading
 
-import com.main.res.R
 import com.frame.base.appContext
+import com.main.res.R
 import kotlinx.coroutines.CoroutineScope
 
 /**

@@ -9,6 +9,7 @@ android {
 }
 
 dependencies {
+    api project(':frame:f_common')
     api project(':business:b_bean')
     api project(':tools:t_db')
 
@@ -20,4 +21,6 @@ dependencies {
     //ali 路由
     api(config.arouter)
     kapt(config.arouter.compiler)
+
+    implementation(config.bugly)
 }

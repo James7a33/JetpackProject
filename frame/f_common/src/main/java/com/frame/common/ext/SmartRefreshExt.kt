@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import com.chad.library.adapter4.BaseQuickAdapter
 import com.frame.base.databinding.LayoutBaseEmptyBinding
 import com.frame.base.loading.LoadStatusEntity
-import com.frame.net.base.BasePage
+import com.frame.net.response.BasePage
 import com.scwang.smart.refresh.layout.SmartRefreshLayout
 import com.tools.toast.ext.toastShort
 
@@ -50,7 +50,7 @@ fun <T : Any> BaseQuickAdapter<T, *>.loadListSuccess(baseListNetEntity: BasePage
     //关闭头部刷新
     if (baseListNetEntity.isRefresh()) {
         //如果是第一页 那么设置最新数据替换
-        this.submitList(baseListNetEntity.getPageData()?: arrayListOf())
+        this.submitList(baseListNetEntity.getPageData())
         smartRefreshLayout.finishRefresh()
     } else {
         //不是第一页，累加数据

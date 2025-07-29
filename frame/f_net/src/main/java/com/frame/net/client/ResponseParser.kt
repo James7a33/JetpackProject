@@ -1,8 +1,8 @@
 package com.frame.net.client
 
 import com.frame.net.NetConstants
-import com.frame.net.base.ApiPageResponse
-import com.frame.net.base.ApiResponse
+import com.frame.net.response.ApiPageResponse
+import com.frame.net.response.ApiResponse
 import rxhttp.wrapper.annotation.Parser
 import rxhttp.wrapper.exception.ParseException
 import rxhttp.wrapper.parse.TypeParser

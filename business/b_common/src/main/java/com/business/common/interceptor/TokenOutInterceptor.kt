@@ -1,8 +1,7 @@
-package com.frame.net.interceptor
+package com.business.common.interceptor
 
-import com.frame.net.base.ApiResponse
+import com.frame.net.response.ApiResponse
 import com.google.gson.Gson
-import com.jeremyliao.liveeventbus.LiveEventBus
 import okhttp3.Interceptor
 import okhttp3.Response
 import okhttp3.ResponseBody
@@ -19,21 +18,21 @@ class TokenOutInterceptor : Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
         val response = chain.proceed(chain.request())
-        return if (response.body != null && response.body!!.contentType() != null) {
+        return if (response.body.contentType() != null) {
             when (response.code) {
                 503 -> response
                 200 -> {
-                    val mediaType = response.body!!.contentType()
+                    val mediaType = response.body.contentType()
                     if (mediaType!!.type.contains("image")) {
                         return response
                     }
-                    val string = response.body!!.string()
+                    val string = response.body.string()
                     val responseBody = ResponseBody.create(mediaType, string)
                     val apiResponse = gson.fromJson(string, ApiResponse::class.java)
                     when (apiResponse.code) {
                         //登录失效
                         10000, 10001, 10002, 10003 -> {
-                            LiveEventBus.get("logout", Boolean::class.java).post(true)
+//                            LiveEventBus.get("logout", Boolean::class.java).post(true)
                         }
                     }
                     response.newBuilder().body(responseBody).build()

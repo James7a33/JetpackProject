@@ -1,6 +1,8 @@
-package com.frame.common.ext
+package com.business.common.ext
 
 import com.alibaba.android.arouter.launcher.ARouter
+import com.business.common.interceptor.MyHeadInterceptor
+import com.business.common.interceptor.TokenOutInterceptor
 import com.effective.android.anchors.task.Task
 import com.effective.android.anchors.task.TaskCreator
 import com.effective.android.anchors.task.project.Project
@@ -9,6 +11,7 @@ import com.frame.base.appContext
 import com.frame.base.loadsir.base.BaseEmptyCallback
 import com.frame.base.loadsir.base.BaseErrorCallback
 import com.frame.base.loadsir.base.BaseLoadingCallback
+import com.frame.common.ext.getColorExt
 import com.frame.net.client.NetHttpClient
 import com.kingja.loadsir.callback.SuccessCallback
 import com.kingja.loadsir.core.LoadSir
@@ -18,6 +21,7 @@ import com.scwang.smart.refresh.layout.SmartRefreshLayout
 import com.tencent.mmkv.MMKV
 import com.tools.toast.ToasterUtils
 import me.jessyan.autosize.AutoSizeConfig
+import okhttp3.Interceptor
 import rxhttp.RxHttpPlugins
 import com.main.res.R as Rs
 
@@ -50,7 +54,12 @@ class InitNetWork : Task(TASK_ID, false) {
 
     override fun run(name: String) {
         //传入自己的OKHttpClient 并添加了自己的拦截器
-        RxHttpPlugins.init(NetHttpClient.getDefaultOkHttpClient().build())
+        val okHttpClient = NetHttpClient.getDefaultOkHttpClient(
+            mutableListOf<Interceptor>().apply {
+                add(MyHeadInterceptor())
+                add(TokenOutInterceptor())
+            }).build()
+        RxHttpPlugins.init(okHttpClient)
     }
 }
 
@@ -98,16 +107,15 @@ class InitComm : Task(TASK_ID, false) {
 
 /**
  * 全局下拉刷新
- *
+ * SmartRefreshLayout 通用配置
  */
 private fun initSmartRefresh() {
     SmartRefreshLayout.setDefaultRefreshInitializer { _, layout ->
-        //设置 SmartRefreshLayout 通用配置
         layout.setEnableScrollContentWhenLoaded(true)//是否在加载完成时滚动列表显示新的内容
         layout.setFooterTriggerRate(0.6f)
     }
     SmartRefreshLayout.setDefaultRefreshHeaderCreator { context, _ ->
-        //设置 Head
+        //设置 Header
         ClassicsHeader(context).apply {
             setAccentColor(getColorExt(Rs.color.black))
         }

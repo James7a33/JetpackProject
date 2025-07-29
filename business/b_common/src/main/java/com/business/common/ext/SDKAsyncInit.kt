@@ -1,4 +1,4 @@
-package com.frame.common.ext
+package com.business.common.ext
 
 import com.effective.android.anchors.AnchorsManager
 import com.effective.android.anchors.block

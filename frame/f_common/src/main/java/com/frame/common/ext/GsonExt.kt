@@ -1,4 +1,4 @@
-package com.frame.net.ext
+package com.frame.common.ext
 
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken

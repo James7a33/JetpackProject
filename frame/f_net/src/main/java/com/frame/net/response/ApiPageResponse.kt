@@ -1,4 +1,4 @@
-package com.frame.net.base
+package com.frame.net.response
 
 import com.frame.net.NetConstants
 

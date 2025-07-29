@@ -1,4 +1,4 @@
-package com.frame.common.constant
+package com.business.common.constant
 
 /**
  * @Author: james

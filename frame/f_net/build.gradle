@@ -9,12 +9,9 @@ android {
 }
 
 dependencies {
-    implementation project(':frame:f_base')
-    implementation project(':tools:t_logger')
+    api project(':frame:f_base')
 
     api config.okhttp3
     api config.rxhttp
     kapt config.rxhttpCompiler
-
-    implementation config.liveEventBus
 }

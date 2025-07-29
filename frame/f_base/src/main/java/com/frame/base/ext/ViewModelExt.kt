@@ -1,8 +1,8 @@
 package com.frame.base.ext
 
 import androidx.lifecycle.ViewModelProvider
-import com.frame.base.ui.BaseVMActivity
-import com.frame.base.ui.BaseVMFragment
+import com.frame.base.base.BaseVMActivity
+import com.frame.base.base.BaseVMFragment
 import com.frame.base.vm.BaseViewModel
 import java.lang.reflect.ParameterizedType
 

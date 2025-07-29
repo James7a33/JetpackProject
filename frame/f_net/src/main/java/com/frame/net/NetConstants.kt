@@ -21,4 +21,11 @@ object NetConstants {
 
     // 分页数量
     const val DATA_LIMIT = 20
+
+    // 连接超时时间
+    const val CONNECT_TIME_OUT = 60L
+    //读取超时时间
+    const val READ_TIME_OUT = 60L
+    //写入超时时间
+    const val WRITE_TIME_OUT = 60L
 }
